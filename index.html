@@ -4,522 +4,83 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:title" content="2026년 상반기 부모교육특강 · 아들러 부모교육분과">
-<meta property="og:description" content="4월 26일 첫 강의 — 모든 아이만의 고유한 선율 : Crucial C's 4로 조율하는 생활양식의 리듬">
-<title>2026년 상반기 부모교육특강 신청 · 아들러 부모교육분과</title>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;600&family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
+<meta property="og:description" content="4월 26일 첫 강의 신청 — 모든 아이만의 고유한 선율">
+<title>2026년 상반기 부모교육특강 · 아들러 부모교육분과</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
-:root{
-  --cream:#fdf8f0;--white:#fff;
-  --t1:#2c2420;--t2:#6b5e56;--t3:#b0a090;
-  --rose:#d4747a;--rose-pale:#fdf0f0;--rose-dark:#a84e54;
-  --sage:#7a9e8e;--sage-pale:#edf4f0;--sage-dark:#4a7060;
-  --warm:#e8a86a;
-  --b1:rgba(0,0,0,0.09);
+body{
+  font-family:'Apple SD Gothic Neo','Noto Sans KR',sans-serif;
+  background:#faf8f4;
+  min-height:100vh;
+  display:flex;flex-direction:column;
+  align-items:center;
+  padding:2rem 1rem 3rem;
 }
-html,body{min-height:100%;font-family:'Noto Sans KR',sans-serif;background:var(--cream);color:var(--t1);}
+.wrap{width:100%;max-width:480px;}
 
-/* ── 헤더 히어로 ── */
-.hero{
-  background:linear-gradient(160deg,#fff8f0 0%,#fdeef0 50%,#f0f8f4 100%);
-  padding:3rem 1.5rem 2.5rem;
-  text-align:center;
-  border-bottom:0.5px solid var(--b1);
-  position:relative;
+.poster-link{
+  display:block;
+  cursor:pointer;
+  border-radius:16px;
   overflow:hidden;
-}
-.hero::before{
-  content:'';position:absolute;top:-60px;right:-60px;
-  width:200px;height:200px;border-radius:50%;
-  background:rgba(212,116,122,0.07);
-}
-.hero::after{
-  content:'';position:absolute;bottom:-40px;left:-40px;
-  width:150px;height:150px;border-radius:50%;
-  background:rgba(122,158,142,0.07);
-}
-.org-badge{
-  display:inline-flex;align-items:center;gap:6px;
-  font-size:11px;color:var(--t2);
-  border:0.5px solid var(--b1);border-radius:20px;
-  padding:5px 14px;margin-bottom:1.6rem;
-  letter-spacing:.08em;font-weight:300;
-  background:rgba(255,255,255,0.7);
-}
-.org-dot{width:6px;height:6px;border-radius:50%;background:var(--rose);}
-.hero-eyebrow{
-  font-size:12px;color:var(--t3);letter-spacing:.14em;
-  font-weight:400;margin-bottom:.8rem;
-}
-.hero-title{
-  font-family:'Noto Serif KR',serif;
-  font-size:32px;font-weight:600;
-  color:var(--t1);line-height:1.35;
-  margin-bottom:.6rem;
-}
-.hero-title span{color:var(--rose);}
-.hero-sub{
-  font-size:14px;color:var(--t2);
-  line-height:1.7;font-weight:300;
-  max-width:380px;margin:0 auto 2rem;
-}
-.cafe-btn{
-  display:inline-flex;align-items:center;gap:8px;
-  padding:11px 22px;
-  background:#03c75a;color:#fff;
-  border:none;border-radius:24px;
-  font-family:inherit;font-size:13px;font-weight:500;
-  text-decoration:none;cursor:pointer;
-  transition:background .15s,transform .12s;
-  letter-spacing:.02em;
-  box-shadow:0 4px 16px rgba(3,199,90,0.3);
-}
-.cafe-btn:hover{background:#02b04e;transform:translateY(-1px);}
-.cafe-btn svg{flex-shrink:0;}
-
-/* ── 강의 카드 섹션 ── */
-.section{max-width:560px;margin:0 auto;padding:2.4rem 1.4rem;}
-.section-label{
-  font-size:10px;color:var(--t3);letter-spacing:.16em;
-  font-weight:500;margin-bottom:1.4rem;
-  display:flex;align-items:center;gap:8px;
-}
-.section-label::after{content:'';flex:1;height:.5px;background:var(--b1);}
-
-/* 강의 카드 */
-.lecture-card{
-  background:var(--white);border-radius:18px;
-  border:0.5px solid var(--b1);overflow:hidden;
-  margin-bottom:12px;
-}
-.lc-header{
-  padding:20px 20px 0;
-}
-.lc-date-badge{
-  display:inline-flex;align-items:center;gap:6px;
-  background:var(--rose-pale);border-radius:20px;
-  padding:5px 12px;margin-bottom:12px;
-}
-.lc-date{font-size:13px;font-weight:600;color:var(--rose);}
-.lc-label{font-size:11px;color:var(--rose-dark);font-weight:300;}
-.lc-title{
-  font-family:'Noto Serif KR',serif;
-  font-size:17px;font-weight:400;
-  color:var(--t1);line-height:1.5;
-  margin-bottom:8px;
-}
-.lc-sub{font-size:13px;color:var(--t2);font-weight:300;line-height:1.6;margin-bottom:16px;}
-.lc-footer{
-  background:#faf8f6;
-  padding:12px 20px;
-  display:flex;align-items:center;gap:8px;
-  border-top:0.5px solid var(--b1);
-}
-.lc-info{font-size:12px;color:var(--t3);}
-
-/* 다가오는 강의 (흐릿) */
-.lecture-card.upcoming{opacity:.55;}
-.lecture-card.upcoming .lc-date{color:var(--t3);}
-.lecture-card.upcoming .lc-date-badge{background:#f0f0ee;}
-
-/* ── 신청 폼 ── */
-.form-card{
-  background:var(--white);border-radius:18px;
-  border:1.5px solid var(--rose);
-  padding:28px 24px;
-  margin-bottom:14px;
-  position:relative;
-}
-.form-card::before{
-  content:'4월 26일 강의 신청';
-  position:absolute;top:-12px;left:20px;
-  background:var(--rose);color:#fff;
-  font-size:11px;font-weight:500;
-  padding:3px 12px;border-radius:10px;
-  letter-spacing:.06em;
-}
-.form-title{
-  font-family:'Noto Serif KR',serif;
-  font-size:20px;font-weight:400;
-  color:var(--t1);margin-bottom:.4rem;
-}
-.form-sub{font-size:13px;color:var(--t2);font-weight:300;margin-bottom:1.8rem;line-height:1.6;}
-
-.field{margin-bottom:14px;}
-.field label{
-  font-size:12px;color:var(--t2);
-  display:block;margin-bottom:6px;font-weight:400;
-}
-.field input,.field select,.field textarea{
-  width:100%;padding:11px 14px;
-  border:0.5px solid var(--b1);border-radius:10px;
-  font-family:inherit;font-size:14px;color:var(--t1);
-  background:#fafaf8;outline:none;
-  transition:border-color .15s,background .15s;
-}
-.field input:focus,.field select:focus,.field textarea:focus{
-  border-color:var(--rose);background:var(--white);
-}
-.field input::placeholder,.field textarea::placeholder{color:var(--t3);}
-.field textarea{min-height:80px;resize:vertical;line-height:1.7;}
-.field select{appearance:none;cursor:pointer;}
-
-.field-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
-@media(max-width:400px){.field-row{grid-template-columns:1fr;}}
-
-.submit-btn{
-  width:100%;padding:14px;
-  background:var(--rose);color:#fff;border:none;
-  border-radius:12px;font-family:inherit;
-  font-size:15px;font-weight:500;cursor:pointer;
-  transition:background .15s,transform .12s;
-  letter-spacing:.04em;margin-top:6px;
-}
-.submit-btn:hover{background:var(--rose-dark);transform:translateY(-1px);}
-.submit-btn:disabled{opacity:.4;cursor:default;transform:none;}
-
-.notice-box{
-  background:var(--sage-pale);border-radius:10px;
-  padding:12px 16px;margin-top:14px;
-}
-.notice-box p{font-size:12px;color:var(--sage-dark);line-height:1.7;font-weight:300;}
-
-/* 성공 메시지 */
-.success-msg{
-  display:none;text-align:center;
-  padding:2rem 1rem;
-}
-.success-circle{
-  width:64px;height:64px;border-radius:50%;
-  background:var(--sage-pale);
-  display:flex;align-items:center;justify-content:center;
-  margin:0 auto 1rem;font-size:28px;
-}
-.success-title{
-  font-family:'Noto Serif KR',serif;
-  font-size:20px;font-weight:400;color:var(--t1);
-  margin-bottom:.5rem;
-}
-.success-sub{font-size:13px;color:var(--t2);line-height:1.7;font-weight:300;}
-
-/* 오류 메시지 */
-#form-error{
-  display:none;
-  background:#fff0f0;border-radius:8px;
-  padding:10px 14px;margin-top:10px;
-  font-size:12px;color:var(--rose-dark);
-}
-
-/* ── 하단 CTA ── */
-.footer-cta{
-  background:linear-gradient(135deg,var(--sage-pale) 0%,#f8ede3 100%);
-  border-radius:18px;
-  padding:24px 20px;text-align:center;
-  margin-bottom:20px;
-}
-.footer-cta p{
-  font-size:13px;color:var(--t2);
-  line-height:1.8;font-weight:300;margin-bottom:1rem;
-}
-.footer-cta p strong{color:var(--t1);font-weight:500;}
-.footer-cafe-btn{
-  display:inline-flex;align-items:center;gap:6px;
-  padding:10px 22px;
-  background:#03c75a;color:#fff;
-  border:none;border-radius:24px;
-  font-family:inherit;font-size:13px;font-weight:500;
+  margin-bottom:1.2rem;
+  box-shadow:0 4px 24px rgba(0,0,0,0.12);
+  transition:transform .2s,box-shadow .2s;
   text-decoration:none;
-  box-shadow:0 4px 12px rgba(3,199,90,0.25);
+}
+.poster-link:hover{
+  transform:translateY(-3px);
+  box-shadow:0 8px 32px rgba(0,0,0,0.18);
+}
+.poster-link img{
+  width:100%;display:block;
 }
 
-/* ── 푸터 ── */
-.page-footer{
-  text-align:center;padding:2rem 1.5rem;
-  border-top:0.5px solid var(--b1);
+.hint{
+  text-align:center;
+  font-size:13px;color:#a09080;
+  margin-bottom:1.6rem;
+  display:flex;align-items:center;justify-content:center;gap:6px;
 }
-.page-footer p{font-size:12px;color:var(--t3);font-weight:300;line-height:1.7;}
+.hint-dot{
+  width:6px;height:6px;border-radius:50%;
+  background:#d4747a;opacity:.6;
+  animation:pulse 2s ease-in-out infinite;
+}
+@keyframes pulse{0%,100%{opacity:.3;transform:scale(.8)}50%{opacity:.8;transform:scale(1.2)}}
+
+.cta-btn{
+  display:block;width:100%;
+  padding:15px;
+  background:#d4747a;color:#fff;
+  border:none;border-radius:14px;
+  font-size:16px;font-weight:600;
+  text-align:center;text-decoration:none;
+  font-family:inherit;
+  cursor:pointer;
+  transition:background .15s,transform .12s;
+  letter-spacing:.04em;
+  box-shadow:0 4px 16px rgba(212,116,122,0.35);
+}
+.cta-btn:hover{background:#a84e54;transform:translateY(-1px);}
 </style>
 </head>
 <body>
+<div class="wrap">
 
-<!-- 히어로 -->
-<div class="hero">
-  <div class="org-badge">
-    <span class="org-dot"></span>
-    한국아들러 상담학회 · 부모교육분과
-  </div>
-  <div class="hero-eyebrow">2026 희망의 첫 걸음에 초대합니다</div>
-  <div class="hero-title"><span>2026년</span> 상반기 부모교육특강</div>
-  <div class="hero-sub">
-    아들러 개인심리학으로 함께<br>
-    성장하는 부모교육의 여정을 응원해주세요.
-  </div>
-  <a class="cafe-btn" href="https://cafe.naver.com/adlerparents" target="_blank" rel="noopener">
-    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-      <rect width="16" height="16" rx="4" fill="white" opacity="0.25"/>
-      <text x="3" y="12" font-size="10" fill="white" font-weight="700">N</text>
-    </svg>
-    네이버 카페 방문하기
+  <a class="poster-link" href="adler_lecture_apply.html">
+    <img src="poster_lecture.jpg" alt="2026년 상반기 부모교육특강 포스터">
   </a>
-</div>
 
-<div class="section">
-
-  <!-- 강의 일정 -->
-  <div class="section-label">2026 강의 일정</div>
-
-  <!-- 4월 강의 — 주강의 -->
-  <div class="lecture-card">
-    <div class="lc-header">
-      <div class="lc-date-badge">
-        <span class="lc-date">4월 26일 (일)</span>
-        <span class="lc-label">· 첫 번째 강의</span>
-      </div>
-      <div class="lc-title">모든 아이만의 고유한 선율<br>Crucial C's 4로 조율하는 생활양식의 리듬</div>
-      <div class="lc-sub">아들러 개인심리학의 핵심 개념 Crucial C's를 통해 아이의 생활양식을 이해하고, 격려로 성장을 지원하는 부모의 역할을 함께 탐색해요.</div>
-    </div>
-    <div class="lc-footer" style="flex-direction:column;align-items:flex-start;gap:6px;">
-      <div style="display:flex;align-items:center;gap:8px;font-size:12px;color:var(--t2);">
-        <span style="color:var(--rose);font-weight:500;">⏰</span>
-        <span>강의시간 &nbsp;오후 7시 30분 ~ 9시</span>
-      </div>
-      <div style="display:flex;align-items:flex-start;gap:8px;font-size:12px;color:var(--t2);line-height:1.5;">
-        <span style="color:var(--rose);font-weight:500;">👩‍🏫</span>
-        <span>강사 &nbsp;심리상담연구소 심지 김이수 소장<br>
-          <span style="font-size:11px;color:var(--t3);font-weight:300;">(아들러상담전문가 1급 · 부모교육분과 대표)</span>
-        </span>
-      </div>
-      <div style="display:flex;align-items:center;gap:8px;font-size:12px;color:var(--t2);">
-        <span style="color:var(--rose);font-weight:500;">💻</span>
-        <span>강의방법 &nbsp;온라인 Zoom &nbsp;<span style="background:var(--rose-pale);color:var(--rose-dark);font-size:11px;padding:2px 8px;border-radius:10px;font-weight:500;">무료 공개강좌</span></span>
-      </div>
-      <div style="margin-top:4px;width:100%;text-align:right;">
-        <a href="#apply-form-section"
-          style="display:inline-flex;align-items:center;gap:5px;padding:7px 18px;background:var(--rose);color:#fff;border-radius:20px;font-size:13px;font-weight:500;text-decoration:none;"
-          onmouseover="this.style.background='#a84e54'" onmouseout="this.style.background='#d4747a'">
-          신청하기 →
-        </a>
-      </div>
-    </div>
+  <div class="hint">
+    <span class="hint-dot"></span>
+    포스터를 클릭하거나 아래 버튼을 눌러 신청하세요
   </div>
 
-  <!-- 5월 강의 -->
-  <div class="lecture-card upcoming">
-    <div class="lc-header">
-      <div class="lc-date-badge">
-        <span class="lc-date">5월 31일 (일)</span>
-        <span class="lc-label">· 두 번째 강의</span>
-      </div>
-      <div class="lc-title">가족의 달<br>영화 원더와 함께 하는 가족정서 소풍</div>
-      <div class="lc-sub">영화 &lt;원더&gt;를 통해 가족 안의 감정을 들여다보고, 서로를 격려하는 방법을 나눠요.</div>
-    </div>
-    <div class="lc-footer">
-      <span class="lc-info">신청은 추후 오픈 예정이에요</span>
-    </div>
-  </div>
-
-  <!-- 7월 강의 -->
-  <div class="lecture-card upcoming">
-    <div class="lc-header">
-      <div class="lc-date-badge">
-        <span class="lc-date">7월 26일 (일)</span>
-        <span class="lc-label">· 세 번째 강의</span>
-      </div>
-      <div class="lc-title">조부모 부모교육<br>나의 부모, 나의 아이, 그리고 나</div>
-      <div class="lc-sub">세대를 넘나드는 관계 안에서 나 자신을 이해하고, 격려하는 여정을 함께해요.</div>
-    </div>
-    <div class="lc-footer">
-      <span class="lc-info">신청은 추후 오픈 예정이에요</span>
-    </div>
-  </div>
-
-  <!-- 신청 폼 -->
-  <div id="apply-form-section" style="height:1.6rem;scroll-margin-top:20px;"></div>
-  <div class="section-label">4월 강의 신청</div>
-
-  <div class="form-card">
-    <div id="form-wrap">
-      <div class="form-title">신청서 작성하기</div>
-      <div class="form-sub">
-        아래 정보를 입력하시면 담당자가 확인 후 안내 드릴게요.<br>
-        모든 항목은 강의 운영 목적으로만 사용됩니다.
-      </div>
-
-      <form id="apply-form" onsubmit="submitForm(event)">
-
-        <div class="field-row">
-          <div class="field">
-            <label for="name">성함 *</label>
-            <input type="text" id="name" name="name" placeholder="홍길동" required>
-          </div>
-          <div class="field">
-            <label for="phone">연락처 *</label>
-            <input type="tel" id="phone" name="phone" placeholder="010-0000-0000" required>
-          </div>
-        </div>
-
-        <div class="field">
-          <label for="email">이메일 (안내 수신용)</label>
-          <input type="email" id="email" name="email" placeholder="example@email.com">
-        </div>
-
-        <div class="field">
-          <label for="role">참여 역할</label>
-          <select id="role" name="role">
-            <option value="">선택해주세요</option>
-            <option>학회회원</option>
-            <option>분과회원</option>
-            <option>부모</option>
-            <option>예비 부모</option>
-            <option>상담사 · 교사</option>
-            <option>조부모</option>
-            <option>기타</option>
-          </select>
-        </div>
-
-        <div class="field">
-          <label for="memo">신청 동기나 궁금한 점 (선택)</label>
-          <textarea id="memo" name="memo" placeholder="자유롭게 적어주세요..."></textarea>
-        </div>
-
-        <div class="field" style="margin-top:6px;">
-          <label style="display:flex;align-items:flex-start;gap:10px;cursor:pointer;font-size:13px;color:var(--t2);">
-            <input type="checkbox" id="newsletter" name="newsletter"
-              style="width:18px;height:18px;min-width:18px;accent-color:var(--rose);margin-top:1px;cursor:pointer;border-radius:4px;">
-            <span style="line-height:1.6;">
-              부모교육분과 <strong style="color:var(--t1);font-weight:500;">뉴스레터</strong>를 받고 싶어요.<br>
-              <span style="font-size:11px;color:var(--t3);font-weight:300;">강의 소식, 부모교육 자료, 격려 이야기를 이메일로 보내드려요.</span>
-            </span>
-          </label>
-        </div>
-
-        <div id="form-error">입력한 내용을 다시 확인해주세요.</div>
-
-        <button class="submit-btn" type="submit" id="submit-btn">
-          4월 26일 강의 신청하기 →
-        </button>
-
-        <div class="notice-box">
-          <p>
-            부모교육분과의 첫 공개강좌를 신청해주셔서 감사합니다.<br>
-            강좌 하루 전 줌(Zoom) 주소가 안내됩니다.<br>
-            문의사항은 <a href="https://cafe.naver.com/adlerparents" target="_blank" rel="noopener" style="color:var(--sage-dark);font-weight:500;">네이버 카페 사랑방</a>에 남겨주세요.
-          </p>
-        </div>
-
-      </form>
-    </div>
-
-    <div class="success-msg" id="success-msg">
-      <div class="success-circle">🌱</div>
-      <div class="success-title">신청이 완료됐어요!</div>
-      <p class="success-sub">
-        강좌 하루 전 줌(Zoom) 주소가 안내됩니다.<br>
-        4월 26일에 뵙겠습니다 😊<br><br>
-        네이버 카페에 오시면 더 많은 소식을 만나실 수 있어요.
-      </p>
-      <a class="cafe-btn" href="https://cafe.naver.com/adlerparents" target="_blank" rel="noopener" style="display:inline-flex;margin-top:1.2rem;">
-        네이버 카페 방문하기 →
-      </a>
-    </div>
-  </div>
-
-  <!-- 카페 홍보 -->
-  <div class="footer-cta">
-    <p>
-      <strong>한국아들러 상담학회 부모교육분과</strong>의 네이버 카페에서<br>
-      강의 소식, 부모교육 자료, 격려 이야기를 만나보세요.
-    </p>
-    <a class="footer-cafe-btn" href="https://cafe.naver.com/adlerparents" target="_blank" rel="noopener">
-      카페 방문하기 →
-    </a>
-  </div>
+  <a class="cta-btn" href="adler_lecture_apply.html">
+    4월 26일 강의 신청하기 →
+  </a>
 
 </div>
-
-<div class="page-footer">
-  <p>
-    한국아들러 상담학회 · 아들러 부모교육분과<br>
-    문의: <a href="https://cafe.naver.com/adlerparents" style="color:var(--sage-dark);">네이버 카페</a> · 아들러 개인심리학 기반 부모교육
-  </p>
-</div>
-
-<script>
-async function submitForm(e) {
-  e.preventDefault();
-  var btn = document.getElementById('submit-btn');
-  var err = document.getElementById('form-error');
-  err.style.display = 'none';
-  btn.disabled = true;
-  btn.textContent = '신청 중...';
-
-  var name  = document.getElementById('name').value.trim();
-  var phone = document.getElementById('phone').value.trim();
-  var email = document.getElementById('email').value.trim();
-  var role  = document.getElementById('role').value;
-  var memo  = document.getElementById('memo').value.trim();
-  var newsletter = document.getElementById('newsletter').checked ? '수신 동의' : '미동의';
-
-  if (!name || !phone) {
-    err.style.display = 'block';
-    btn.disabled = false;
-    btn.textContent = '4월 26일 강의 신청하기 →';
-    return;
-  }
-
-  /* ── Formspree 엔드포인트 ──
-     formspree.io 가입 후 받은 URL로 교체하세요.
-     예: https://formspree.io/f/xyzabcde
-  */
-  var FORMSPREE = 'https://formspree.io/f/xojprlza';
-
-  if (false) { /* Formspree 설정 완료 */
-    /* Formspree 미설정 시 — mailto 방식으로 대체 */
-    var lines = [
-      '[2026년 상반기 부모교육특강 4월 강의 신청]',
-      '',
-      '성함: ' + name,
-      '연락처: ' + phone,
-      '이메일: ' + (email || '미입력'),
-      '역할: ' + (role || '미선택'),
-      '뉴스레터 수신: ' + newsletter,
-      '신청 동기: ' + (memo || '미입력'),
-      '',
-      '신청일: ' + new Date().toLocaleDateString('ko-KR')
-    ];
-    var subject = encodeURIComponent('[부모교육분과] 4월 강의 신청 — ' + name);
-    var body    = encodeURIComponent(lines.join('\n'));
-    var mailto  = 'mailto:simjimind@gmail.com?subject=' + subject + '&body=' + body;
-    window.location.href = mailto;
-    showSuccess();
-    return;
-  }
-
-  try {
-    var res = await fetch(FORMSPREE, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-      body: JSON.stringify({ name, phone, email, role, memo, newsletter,
-        강의: '4월 26일 - Crucial C\'s 4로 조율하는 생활양식의 리듬' })
-    });
-    if (res.ok) {
-      showSuccess();
-    } else {
-      throw new Error('서버 오류');
-    }
-  } catch(ex) {
-    err.textContent = '잠시 오류가 발생했어요. 페이지를 새로고침 후 다시 시도해주세요.';
-    err.style.display = 'block';
-    btn.disabled = false;
-    btn.textContent = '4월 26일 강의 신청하기 →';
-  }
-}
-
-function showSuccess() {
-  document.getElementById('form-wrap').style.display = 'none';
-  var s = document.getElementById('success-msg');
-  s.style.display = 'block';
-}
-</script>
 </body>
 </html>
