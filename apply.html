@@ -515,32 +515,10 @@ async function submitForm(e) {
     if (res.ok) {
       /* ── 뉴스레터 체크 시 스티비 구독자 추가 (숨겨진 폼 방식) ── */
       if (document.getElementById('newsletter').checked && email) {
-        var stibeeFrame = document.createElement('iframe');
-        stibeeFrame.name = 'stibee_hidden';
-        stibeeFrame.style.display = 'none';
-        document.body.appendChild(stibeeFrame);
-
-        var stibeeForm = document.createElement('form');
-        stibeeForm.action = 'https://stibee.com/api/v1.0/lists/0xsgGrS_zFHxa0xx2kpBW24PW-jijg==/public/subscribers';
-        stibeeForm.method = 'POST';
-        stibeeForm.target = 'stibee_hidden';
-        stibeeForm.acceptCharset = 'utf-8';
-
-        [['email', email], ['name', name]].forEach(function(pair) {
-          var inp = document.createElement('input');
-          inp.type = 'hidden';
-          inp.name = pair[0];
-          inp.value = pair[1];
-          stibeeForm.appendChild(inp);
-        });
-
-        document.body.appendChild(stibeeForm);
-        stibeeForm.submit();
-
-        setTimeout(function() {
-          document.body.removeChild(stibeeForm);
-          document.body.removeChild(stibeeFrame);
-        }, 3000);
+        /* 스티비 숨겨진 폼에 값 채우고 제출 */
+        document.getElementById('stb_email').value = email;
+        document.getElementById('stb_name').value = name;
+        document.getElementById('stb_form_submit_button').click();
       }
       showSuccess();
     } else {
@@ -572,5 +550,22 @@ document.getElementById('newsletter').addEventListener('change', function() {
   }
 });
 </script>
+
+<!-- 숨겨진 스티비 구독 폼 -->
+<div id="stibee-hidden-wrap" style="display:none;position:absolute;left:-9999px;">
+  <div id="stb_subscribe">
+    <form action="https://stibee.com/api/v1.0/lists/0xsgGrS_zFHxa0xx2kpBW24PW-jijg==/public/subscribers"
+      method="POST" target="_blank" accept-charset="utf-8"
+      class="stb_form" name="stb_subscribe_form" id="stb_subscribe_form" data-lang="" novalidate>
+      <input type="text" class="stb_form_set_input" id="stb_email" name="email">
+      <input type="text" class="stb_form_set_input" id="stb_name" name="name">
+      <input type="checkbox" id="stb_policy" value="stb_policy_true" checked>
+      <fieldset class="stb_form_set_submit">
+        <button type="submit" class="stb_form_submit_button" id="stb_form_submit_button">구독</button>
+      </fieldset>
+    </form>
+  </div>
+</div>
+<script type="text/javascript" src="https://resource.stibee.com/subscribe/stb_subscribe_form.js"></script>
 </body>
 </html>
