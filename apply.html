@@ -513,15 +513,34 @@ async function submitForm(e) {
         강의: '4월 26일 - Crucial C\'s 4로 조율하는 생활양식의 리듬' })
     });
     if (res.ok) {
-      /* ── 뉴스레터 체크 시 스티비 구독자 추가 ── */
+      /* ── 뉴스레터 체크 시 스티비 구독자 추가 (숨겨진 폼 방식) ── */
       if (document.getElementById('newsletter').checked && email) {
-        try {
-          await fetch('https://stibee.com/api/v1.0/lists/0xsgGrS_zFHxa0xx2kpBW24PW-jijg==/public/subscribers', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ subscribers: [{ email: email, name: name }] })
-          });
-        } catch(se) { /* 스티비 오류는 강의 신청에 영향 없이 무시 */ }
+        var stibeeFrame = document.createElement('iframe');
+        stibeeFrame.name = 'stibee_hidden';
+        stibeeFrame.style.display = 'none';
+        document.body.appendChild(stibeeFrame);
+
+        var stibeeForm = document.createElement('form');
+        stibeeForm.action = 'https://stibee.com/api/v1.0/lists/0xsgGrS_zFHxa0xx2kpBW24PW-jijg==/public/subscribers';
+        stibeeForm.method = 'POST';
+        stibeeForm.target = 'stibee_hidden';
+        stibeeForm.acceptCharset = 'utf-8';
+
+        [['email', email], ['name', name]].forEach(function(pair) {
+          var inp = document.createElement('input');
+          inp.type = 'hidden';
+          inp.name = pair[0];
+          inp.value = pair[1];
+          stibeeForm.appendChild(inp);
+        });
+
+        document.body.appendChild(stibeeForm);
+        stibeeForm.submit();
+
+        setTimeout(function() {
+          document.body.removeChild(stibeeForm);
+          document.body.removeChild(stibeeFrame);
+        }, 3000);
       }
       showSuccess();
     } else {
