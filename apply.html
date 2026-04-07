@@ -359,7 +359,7 @@ html,body{min-height:100%;font-family:'Noto Sans KR',sans-serif;background:var(-
         </div>
 
         <div class="field">
-          <label for="email">이메일 (안내 수신용)</label>
+          <label for="email" id="email-label">이메일 (안내 수신용)</label>
           <input type="email" id="email" name="email" placeholder="example@email.com">
         </div>
 
@@ -467,6 +467,16 @@ async function submitForm(e) {
     return;
   }
 
+  var newsletterChecked = document.getElementById('newsletter').checked;
+  if (newsletterChecked && !email) {
+    err.textContent = '뉴스레터 수신을 원하시면 이메일을 입력해주세요.';
+    err.style.display = 'block';
+    document.getElementById('email').focus();
+    btn.disabled = false;
+    btn.textContent = '4월 26일 강의 신청하기 →';
+    return;
+  }
+
   /* ── Formspree 엔드포인트 ──
      formspree.io 가입 후 받은 URL로 교체하세요.
      예: https://formspree.io/f/xyzabcde
@@ -503,6 +513,16 @@ async function submitForm(e) {
         강의: '4월 26일 - Crucial C\'s 4로 조율하는 생활양식의 리듬' })
     });
     if (res.ok) {
+      /* ── 뉴스레터 체크 시 스티비 구독자 추가 ── */
+      if (document.getElementById('newsletter').checked && email) {
+        try {
+          await fetch('https://stibee.com/api/v1.0/lists/0xsgGrS_zFHxa0xx2kpBW24PW-jijg==/public/subscribers', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ subscribers: [{ email: email, name: name }] })
+          });
+        } catch(se) { /* 스티비 오류는 강의 신청에 영향 없이 무시 */ }
+      }
       showSuccess();
     } else {
       throw new Error('서버 오류');
@@ -520,6 +540,18 @@ function showSuccess() {
   var s = document.getElementById('success-msg');
   s.style.display = 'block';
 }
+
+document.getElementById('newsletter').addEventListener('change', function() {
+  var label = document.getElementById('email-label');
+  var input = document.getElementById('email');
+  if (this.checked) {
+    label.textContent = '이메일 *';
+    input.placeholder = 'example@email.com (뉴스레터 수신 필수)';
+  } else {
+    label.textContent = '이메일 (안내 수신용)';
+    input.placeholder = 'example@email.com';
+  }
+});
 </script>
 </body>
 </html>
