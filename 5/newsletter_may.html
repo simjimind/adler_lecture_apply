@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>아들러 부모편지 5월호 — 가정의 달</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;600;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background-color: #e8e0d4;
+    font-family: 'Noto Sans KR', sans-serif;
+    color: #3a3128;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .email-wrapper {
+    width: 100%;
+    padding: 32px 16px 48px;
+    background-color: #e8e0d4;
+  }
+
+  .email-body {
+    max-width: 580px;
+    margin: 0 auto;
+    background-color: #faf6ef;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(90,70,50,0.10);
+  }
+
+  /* ── 상단 네비 ── */
+  .nav-bar {
+    background-color: #f3ede3;
+    border-bottom: 1px solid #e5ddd0;
+    padding: 12px 28px;
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+  }
+  .nav-bar a {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 12px;
+    color: #7a6a58;
+    text-decoration: none;
+    letter-spacing: 0.03em;
+  }
+  .nav-bar a:hover { color: #3E5C3A; }
+
+  /* ── 헤더 / 히어로 ── */
+  .hero {
+    position: relative;
+    background-color: #f3ede3;
+    text-align: center;
+    padding: 0;
+    overflow: hidden;
+  }
+  .hero img.hero-photo {
+    width: 100%;
+    display: block;
+    max-height: 320px;
+    object-fit: cover;
+    object-position: center 30%;
+    filter: sepia(18%) brightness(0.97);
+  }
+  .hero-overlay {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    background: linear-gradient(to top, rgba(250,246,239,0.95) 0%, rgba(250,246,239,0.5) 60%, transparent 100%);
+    padding: 48px 28px 28px;
+    text-align: center;
+  }
+  .hero-label {
+    display: inline-block;
+    font-family: 'Noto Serif KR', serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    color: #8a6a3a;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .hero-title {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: #3a2e22;
+    line-height: 1.3;
+    margin-bottom: 4px;
+  }
+  .hero-sub {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 13px;
+    color: #8a7a68;
+    letter-spacing: 0.04em;
+  }
+
+  /* ── 구분선 장식 ── */
+  .divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0 28px;
+    margin: 4px 0;
+  }
+  .divider-line { flex: 1; height: 1px; background: #ddd6ca; }
+  .divider-dot { width: 5px; height: 5px; border-radius: 50%; background: #c4a882; }
+
+  /* ── 섹션 공통 ── */
+  .section {
+    padding: 28px 32px;
+  }
+  .section + .section {
+    border-top: 1px solid #ede7dd;
+  }
+
+  /* ── 인사말 ── */
+  .greeting {
+    padding: 32px 36px 24px;
+    text-align: center;
+  }
+  .greeting-month {
+    display: inline-block;
+    font-family: 'Noto Serif KR', serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    color: #8a6a3a;
+    background: #f0e8d8;
+    padding: 4px 14px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+  }
+  .greeting p {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 14.5px;
+    line-height: 2.0;
+    color: #4a3e32;
+    word-break: keep-all;
+    text-wrap: pretty;
+  }
+  .greeting p + p { margin-top: 16px; }
+
+  /* ── 메인스토리 ── */
+  .main-story {
+    background: #f5efe4;
+    padding: 32px 32px 28px;
+    border-top: 1px solid #ede7dd;
+    border-bottom: 1px solid #ede7dd;
+  }
+  .section-eyebrow {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    color: #8a6a3a;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .main-story-title {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 21px;
+    font-weight: 700;
+    color: #2e2416;
+    line-height: 1.4;
+    margin-bottom: 14px;
+  }
+  .main-story-body {
+    font-size: 14px;
+    line-height: 2.0;
+    color: #5a4e42;
+    word-break: keep-all;
+    text-wrap: pretty;
+  }
+  .story-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 20px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: #3E5C3A;
+    text-decoration: none;
+    border-bottom: 1.5px solid rgba(62,92,58,0.3);
+    padding-bottom: 1px;
+    transition: all 0.2s;
+  }
+  .story-link:hover { border-bottom-color: #3E5C3A; }
+  .story-link::after { content: '→'; font-size: 13px; }
+
+  /* ── 강좌 배너 ── */
+  .lecture-banner {
+    background: linear-gradient(135deg, #3E5C3A 0%, #2d4429 100%);
+    padding: 28px 32px;
+    border-radius: 0;
+  }
+  .lecture-banner .section-eyebrow { color: rgba(255,255,255,0.65); }
+  .lecture-title {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.45;
+    margin-bottom: 16px;
+  }
+  .lecture-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    margin-bottom: 20px;
+  }
+  .lecture-meta-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 13px;
+    color: rgba(255,255,255,0.82);
+    line-height: 1.5;
+  }
+  .lecture-meta-label {
+    font-weight: 600;
+    color: #c8e6c4;
+    min-width: 42px;
+    flex-shrink: 0;
+  }
+  .lecture-btn {
+    display: inline-block;
+    background: #ffffff;
+    color: #3E5C3A;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 11px 24px;
+    border-radius: 3px;
+    text-decoration: none;
+    letter-spacing: 0.03em;
+    transition: background 0.2s;
+  }
+  .lecture-btn:hover { background: #f0fced; }
+  .movie-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.22);
+    border-radius: 20px;
+    padding: 4px 12px;
+    font-size: 11px;
+    color: rgba(255,255,255,0.75);
+    margin-bottom: 12px;
+    letter-spacing: 0.04em;
+  }
+
+  /* ── 감사 배너 ── */
+  .thanks-section {
+    background: #faf6ef;
+    padding: 22px 32px;
+    border-top: 1px solid #ede7dd;
+    border-bottom: 1px solid #ede7dd;
+  }
+  .thanks-text {
+    font-size: 13.5px;
+    color: #6a5a48;
+    line-height: 1.8;
+    text-align: center;
+    word-break: keep-all;
+  }
+  .thanks-text a {
+    color: #3E5C3A;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(62,92,58,0.3);
+  }
+
+  /* ── 유형 버튼 그리드 ── */
+  .type-grid {
+    padding: 24px 32px;
+    background: #f5efe4;
+    border-bottom: 1px solid #ede7dd;
+  }
+  .type-grid-title {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: #6a5a48;
+    text-align: center;
+    margin-bottom: 14px;
+    letter-spacing: 0.03em;
+  }
+  .type-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  .type-btn {
+    display: block;
+    background: #faf6ef;
+    border: 1px solid #ddd6ca;
+    border-radius: 3px;
+    padding: 12px 14px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: #3a3128;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.2s;
+  }
+  .type-btn:hover {
+    background: #3E5C3A;
+    color: #ffffff;
+    border-color: #3E5C3A;
+  }
+
+  /* ── 이럴땐 이렇게 ── */
+  .qa-section {
+    padding: 26px 32px;
+    border-bottom: 1px solid #ede7dd;
+  }
+  .qa-item {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    padding: 16px 0;
+  }
+  .qa-item + .qa-item { border-top: 1px dashed #e0d8cc; }
+  .qa-thumb {
+    flex-shrink: 0;
+    width: 80px;
+    height: 80px;
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid #e5ddd0;
+  }
+  .qa-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+  }
+  .qa-content { flex: 1; }
+  .qa-q {
+    font-size: 14px;
+    font-weight: 500;
+    color: #3a3128;
+    line-height: 1.6;
+    word-break: keep-all;
+    margin-bottom: 8px;
+  }
+  .qa-link {
+    font-size: 12px;
+    color: #3E5C3A;
+    text-decoration: none;
+    font-weight: 500;
+    border-bottom: 1px solid rgba(62,92,58,0.25);
+  }
+
+  /* ── 치유와 지혜 ── */
+  .wisdom-section {
+    padding: 26px 32px;
+    background: #f5efe4;
+    border-bottom: 1px solid #ede7dd;
+  }
+  .wisdom-items { display: flex; flex-direction: column; gap: 12px; }
+  .wisdom-item {
+    background: #faf6ef;
+    border: 1px solid #e5ddd0;
+    border-radius: 3px;
+    padding: 16px 18px;
+    text-decoration: none;
+    display: block;
+    transition: all 0.2s;
+  }
+  .wisdom-item:hover { border-color: #3E5C3A; background: #f0fced; }
+  .wisdom-item-title {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: #2e2416;
+    line-height: 1.5;
+    word-break: keep-all;
+    margin-bottom: 3px;
+  }
+  .wisdom-item-sub {
+    font-size: 12px;
+    color: #8a7a68;
+  }
+
+  /* ── CTA 섹션 ── */
+  .cta-section {
+    padding: 28px 32px;
+    background: #faf6ef;
+    border-top: 1px solid #ede7dd;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .cta-btn {
+    display: block;
+    text-align: center;
+    padding: 16px 20px;
+    border-radius: 3px;
+    text-decoration: none;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.5;
+    transition: all 0.2s;
+    word-break: keep-all;
+  }
+  .cta-btn-recommend {
+    background: #f0e8d8;
+    border: 1px solid #d4c4a8;
+    color: #5a4228;
+  }
+  .cta-btn-recommend:hover {
+    background: #e8dcc8;
+    border-color: #c4a882;
+  }
+  .cta-btn-worry {
+    background: #f5efe4;
+    border: 1px solid #ddd6ca;
+    color: #4a3e32;
+  }
+  .cta-btn-worry:hover {
+    background: #ede7dd;
+  }
+  .cta-btn-sub {
+    display: block;
+    font-size: 11.5px;
+    color: #8a7a68;
+    margin-top: 3px;
+    font-weight: 400;
+  }
+  .footer {
+    background: #3a2e22;
+    padding: 28px 32px;
+    text-align: center;
+  }
+  .footer-logo {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: #f0e8d8;
+    margin-bottom: 6px;
+  }
+  .footer-icons {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin: 14px 0;
+  }
+  .footer-icon-link {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #d4c9b8;
+    font-size: 13px;
+    transition: background 0.2s;
+  }
+  .footer-icon-link:hover { background: rgba(255,255,255,0.25); color: #fff; }
+  .footer-info {
+    font-size: 11.5px;
+    color: #a89880;
+    line-height: 1.9;
+  }
+  .footer-info a { color: #a89880; text-decoration: none; }
+  .footer-info a:hover { color: #d4c9b8; }
+  .footer-unsubscribe {
+    margin-top: 10px;
+    font-size: 11px;
+    color: #7a6a58;
+  }
+  .footer-unsubscribe a { color: #7a6a58; }
+
+  /* ── 아들러 명언 블록 ── */
+  .quote-block {
+    background: #f5efe4;
+    border-left: 3px solid #c4a882;
+    padding: 18px 22px;
+    margin: 20px 0 4px;
+    border-radius: 0 3px 3px 0;
+  }
+  .quote-text {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 14.5px;
+    font-weight: 600;
+    color: #3a2e22;
+    line-height: 1.75;
+    word-break: keep-all;
+  }
+  .quote-source {
+    margin-top: 8px;
+    font-size: 12px;
+    color: #8a7a68;
+    font-style: italic;
+  }
+</style>
+</head>
+<body>
+<div class="email-wrapper">
+  <div class="email-body">
+
+    <!-- 상단 네비 -->
+    <div class="nav-bar">
+      <a href="https://cafe.naver.com/adlerparents">아들러 마을로</a>
+      <a href="https://cafe.naver.com/f-e/cafes/31682183/menus/16?viewType=L">부모교육 이야기</a>
+    </div>
+
+    <!-- 히어로: 메인 사진 -->
+    <div class="hero">
+      <img class="hero-photo" src="uploads/5month.jpg" alt="아이의 손이 부모의 어깨에 닿아 있는 흑백 사진">
+      <div class="hero-overlay">
+        <span class="hero-label">2025 May · Vol.05</span>
+        <div class="hero-title">아들러 부모편지</div>
+        <div class="hero-sub">가정의 달 — 함께 성장하는 우리</div>
+      </div>
+    </div>
+
+    <!-- 메인스토리 -->
+    <div class="main-story">
+      <div class="section-eyebrow">📖 메인 스토리</div>
+      <div class="main-story-title">존재를 인정해주는 언어</div>
+      <div class="main-story-body">
+        끌리는 사람들에게는 공통된 매력이 있습니다.<br>
+        바로 <strong>사람을 반갑게 맞이한다</strong>는 것이지요.<br><br>
+        "어~ 이게 누구야! 정말 반가워요" 하며 멀리서부터 달려와<br>
+        악수하거나 포옹을 건네는 것 — 그 따뜻한 스킨십이<br>
+        상대에게 용기를 주는 <strong>'존재를 인정해주는 언어'</strong>입니다.<br><br>
+        상대도 기뻐하지만, 반기는 자기 자신이 먼저 행복해집니다.<br>
+        만나는 사람 모두가 반가운 사람으로 변화하는 경험,<br>
+        오늘 한 번 먼저 손을 내밀어 보시겠어요?
+      </div>
+
+      <div class="quote-block">
+        <div class="quote-text">"인간은 누구나 공동체에 기여할 때<br>비로소 자신의 가치를 느끼며,<br>이를 통해 어려움을 극복할 '용기'를 얻는다."</div>
+        <div class="quote-source">— 알프레드 아들러 —</div>
+      </div>
+
+      <a href="https://cafe.naver.com/adlerparents/book5123040/96" class="story-link">전체 이야기 읽기</a>
+    </div>
+
+    <!-- 5월 강좌 -->
+    <div style="background:#faf6ef; border-top:1px solid #ede7dd; border-bottom:1px solid #ede7dd;">
+      <a href="https://simjimind.github.io/adler_lecture_apply/" style="display:block;">
+        <img src="uploads/5.png" alt="영화 원더와 함께 하는 가족정서소풍 — 2026.5.31(일) 오후 7:30~9:30 / 온라인 ZOOM 무료공개강좌" style="width:100%; display:block;">
+      </a>
+      <div style="padding:14px 32px 18px; text-align:center;">
+        <a href="https://simjimind.github.io/adler_lecture_apply/" style="display:inline-block; background:#3E5C3A; color:#fff; font-family:'Noto Sans KR',sans-serif; font-size:13px; font-weight:700; padding:11px 28px; border-radius:3px; text-decoration:none; letter-spacing:0.03em;">무료 강좌 신청하기</a>
+      </div>
+    </div>
+
+    <!-- 4월 감사 -->
+    <div class="thanks-section">
+      <div class="thanks-text">
+        4월 공개강좌에 함께해 주심에 깊이 감사드립니다.<br>
+        강좌 내용과 후기는 아래 링크에서 확인하실 수 있습니다.<br>
+        <a href="https://cafe.naver.com/adlerparents/102">4월 공개강좌 이야기 보기 →</a>
+      </div>
+    </div>
+
+    <!-- 나의 유형 -->
+    <div class="type-grid">
+      <div class="type-grid-title">나는 어떤 유형의 부모일까요? ✦ 이상형 단추 찾기</div>
+      <div class="type-buttons">
+        <a href="https://cafe.naver.com/adlerparents/98" class="type-btn">⚡ 행동형</a>
+        <a href="https://cafe.naver.com/adlerparents/99" class="type-btn">📐 규범형</a>
+        <a href="https://cafe.naver.com/adlerparents/100" class="type-btn">🔍 탐구형</a>
+        <a href="https://cafe.naver.com/adlerparents/101" class="type-btn">💫 이상형</a>
+      </div>
+    </div>
+
+    <!-- 이럴땐 이렇게 -->
+    <div class="qa-section">
+      <div class="section-eyebrow" style="margin-bottom:16px;">💬 이럴땐 이렇게</div>
+      <div class="qa-item">
+        <div class="qa-thumb">
+          <img src="uploads/Gemini_Generated_Image_pmjq02pmjq02pmjq.png" alt="방문 앞에 선 엄마 삽화">
+        </div>
+        <div class="qa-content">
+          <div class="qa-q">우리 애가 야한 책을 몰래 보고 있었나봐요.<br>어쩌면 좋죠?</div>
+          <a href="https://cafe.naver.com/adlerparents/94" class="qa-link">답변 읽기 →</a>
+        </div>
+      </div>
+      <div class="qa-item">
+        <div class="qa-thumb">
+          <img src="uploads/T2604-13_Illust.png" alt="학교 가기 싫어하는 아이와 엄마 삽화">
+        </div>
+        <div class="qa-content">
+          <div class="qa-q">학교 가기 싫다면서 도통 말을 안해요.<br>속이 타는 것 같아요.</div>
+          <a href="https://cafe.naver.com/adlerparents/89" class="qa-link">답변 읽기 →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 치유와 지혜의 장 -->
+    <div class="wisdom-section">
+      <div class="section-eyebrow" style="margin-bottom:14px;">🌿 치유와 지혜의 장</div>
+      <div class="wisdom-items">
+        <a href="https://cafe.naver.com/adlerparents/87" class="wisdom-item">
+          <div class="wisdom-item-title">FIND MY WHY</div>
+          <div class="wisdom-item-sub">AI와 내 삶의 의미를 찾아가는 여행</div>
+        </a>
+        <a href="https://cafe.naver.com/adlerparents/92" class="wisdom-item">
+          <div class="wisdom-item-title">다시 태어나는 나, 나비 제10기</div>
+          <div class="wisdom-item-sub">타로 × 십우도 × 아들러 — 초대합니다</div>
+        </a>
+      </div>
+    </div>
+
+    <!-- CTA 섹션 -->
+    <div class="cta-section">
+      <a href="#" class="cta-btn cta-btn-recommend">
+        이음이를 좋은 분들께 추천해주세요
+        <span class="cta-btn-sub">소중한 분들과 함께 성장하는 공간을 나눠요</span>
+      </a>
+      <a href="#" class="cta-btn cta-btn-worry">
+        요즘 고민이 있다면 함께 나눠요
+        <span class="cta-btn-sub">익명을 보장합니다</span>
+      </a>
+    </div>
+
+    <!-- 푸터 -->
+    <div class="footer">
+      <div class="footer-logo">한국아들러상담학회 부모교육분과</div>
+      <div class="footer-icons">
+        <a href="https://cafe.naver.com/adlerparents" class="footer-icon-link" title="네이버 카페">N</a>
+        <a href="#" class="footer-icon-link" title="홈">⌂</a>
+        <a href="https://youtu.be/KIDnIKk48xo?si=nBcAlqNboSeWSS3R" class="footer-icon-link" title="유튜브">▶</a>
+      </div>
+      <div class="footer-info">
+        한국아들러상담학회 부모교육분과<br>
+        <a href="/cdn-cgi/l/email-protection#2c5f45414645414542486c4b414d4540024f4341"><span class="__cf_email__" data-cfemail="17647e7a7d7e7a7e797357707a767e7b3974787a">[email&#160;protected]</span></a><br>
+        광주광역시 서구 영업로 26, 2층
+      </div>
+      <div class="footer-unsubscribe">
+        <a href="#">수신거부 Unsubscribe</a>
+      </div>
+    </div>
+
+  </div><!-- /email-body -->
+</div><!-- /email-wrapper -->
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>
