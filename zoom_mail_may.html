@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>공개강좌 Zoom 입장 안내</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;500&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Noto Sans KR', sans-serif;
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 48px 16px 64px;
+  }
+
+  .bg-fixed {
+    position: fixed;
+    inset: 0;
+    background-image: url('https://www.simjimind.co.kr/tree.webp');
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+  }
+
+  .mail-wrap {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 540px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  /* 헤더 — 박스 없음 */
+  .header {
+    text-align: center;
+    padding: 40px 28px 32px;
+  }
+
+  .header-sup {
+    font-size: 11px;
+    font-weight: 300;
+    letter-spacing: 0.2em;
+    color: #2a4a2a;
+    margin-bottom: 6px;
+  }
+
+  .header-div {
+    font-size: 10px;
+    font-weight: 300;
+    letter-spacing: 0.18em;
+    color: #3E5C3A;
+    margin-bottom: 18px;
+  }
+
+  .header-title {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 23px;
+    font-weight: 700;
+    color: #1a321a;
+    line-height: 1.6;
+    margin-bottom: 16px;
+  }
+
+  .header-time {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #2a4a2a;
+    letter-spacing: 0.06em;
+  }
+
+  /* 공통 카드 */
+  .card {
+    background: rgba(255, 255, 255, 0.28);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-radius: 16px;
+    border: 1px solid rgba(255,255,255,0.4);
+    padding: 26px 28px;
+  }
+
+  /* 인트로 */
+  .card-intro {
+    text-align: center;
+    padding: 24px 28px;
+  }
+
+  .card-intro p {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 14px;
+    color: #1e351e;
+    line-height: 2.2;
+  }
+
+  .card-intro strong {
+    color: #3E5C3A;
+    font-weight: 700;
+  }
+
+  /* 섹션 레이블 */
+  .sec-label {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    color: #3E5C3A;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+
+  .sec-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: rgba(62,92,58,0.2);
+  }
+
+  /* Zoom 정보 */
+  .zoom-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .zoom-table tr {
+    border-bottom: 1px solid rgba(62,92,58,0.1);
+  }
+
+  .zoom-table tr:last-child { border-bottom: none; }
+
+  .zoom-table td {
+    padding: 11px 4px;
+    font-size: 13px;
+    vertical-align: middle;
+  }
+
+  .zoom-table .key {
+    color: #5a745a;
+    font-weight: 400;
+    width: 68px;
+    font-size: 11.5px;
+  }
+
+  .zoom-table .val {
+    color: #1a321a;
+    font-weight: 500;
+  }
+
+  .zoom-table .val a {
+    color: #3E5C3A;
+    text-decoration: none;
+    word-break: break-all;
+  }
+
+  /* 안내 텍스트 */
+  .info-text {
+    font-size: 13px;
+    color: #1e351e;
+    line-height: 2.1;
+    border-left: 2px solid rgba(62,92,58,0.35);
+    padding-left: 14px;
+  }
+
+  .info-text strong {
+    color: #2a4a2a;
+    font-weight: 600;
+  }
+
+  /* 영상 */
+  .video-desc {
+    font-size: 13px;
+    color: #2e462e;
+    line-height: 1.9;
+    margin-bottom: 14px;
+    text-align: center;
+  }
+
+  .video-wrap {
+    border-radius: 10px;
+    overflow: hidden;
+    background: #000;
+    line-height: 0;
+  }
+
+  .video-wrap video {
+    width: 100%;
+    display: block;
+    border-radius: 10px;
+    max-height: 300px;
+    object-fit: cover;
+  }
+
+  /* 푸터 — 박스 없음 */
+  .footer {
+    text-align: center;
+    padding: 28px 28px 16px;
+  }
+
+  .footer-closing {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 13.5px;
+    color: #1a321a;
+    line-height: 2.2;
+    margin-bottom: 12px;
+  }
+
+  .footer-org {
+    font-size: 11px;
+    color: #3a523a;
+    letter-spacing: 0.08em;
+    font-weight: 400;
+  }
+</style>
+</head>
+<body>
+
+<div class="bg-fixed"></div>
+
+<div class="mail-wrap">
+
+  <!-- 헤더 — 박스 없음 -->
+  <div class="header">
+    <div class="header-sup">한국아들러상담학회 부모교육분과</div>
+    <div class="header-div">공개강좌 Zoom 입장 안내</div>
+    <div class="header-title">
+      영화 원더와 함께 하는<br>가족정서소풍
+    </div>
+    <div class="header-time">2026. 5. 31. (일) &nbsp; 오후 7:30 — 9:30</div>
+  </div>
+
+  <!-- 인트로 -->
+  <div class="card card-intro">
+    <p>
+      보호하려는 마음이 가장 선한 마음이면서도,<br>
+      때로는 가장 조심해야 할 마음이기도 합니다.<br>
+      <strong>영화 《원더》</strong>와 함께, 내 안의 보호본능을<br>
+      따뜻하게 들여다보는 시간에 초대합니다.
+    </p>
+  </div>
+
+  <!-- Zoom 접속 정보 -->
+  <div class="card">
+    <div class="sec-label">Zoom 접속 정보</div>
+    <table class="zoom-table">
+      <tr>
+        <td class="key">입장 링크</td>
+        <td class="val"><a href="https://us02web.zoom.us/j/6637178313">https://us02web.zoom.us/j/6637178313</a></td>
+      </tr>
+      <tr>
+        <td class="key">회의 ID</td>
+        <td class="val">663 717 8313</td>
+      </tr>
+      <tr>
+        <td class="key">암호</td>
+        <td class="val">202131</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- 입장 안내 -->
+  <div class="card">
+    <div class="sec-label">입장 안내</div>
+    <p class="info-text">
+      강좌는 <strong>오후 7시 30분</strong>에 시작됩니다.<br>
+      원활한 연결 확인을 위해 <strong>5분 전(7시 25분)</strong>에<br>
+      미리 입장해 주시면 감사하겠습니다.
+    </p>
+  </div>
+
+  <!-- 강의 자료 안내 -->
+  <div class="card">
+    <div class="sec-label">강의 자료 안내</div>
+    <p class="info-text">
+      이번 강좌는 공개강좌로 운영되어 별도의 강의 자료 파일은 제공되지 않습니다.<br>
+      강의 내용에 집중하여 함께 나누는 시간으로 준비되어 있으니,<br>
+      편안하게 참여해 주시면 됩니다.
+    </p>
+  </div>
+
+  <!-- 강좌 미리보기 -->
+  <div class="card">
+    <div class="sec-label">강좌 미리보기</div>
+    <p class="video-desc">이번 강좌에서 함께 나눌 영화 《원더》 이야기, 먼저 만나보세요.</p>
+    <div class="video-wrap">
+      <video controls preload="metadata">
+        <source src="https://yuzelvimqcbdporvyunm.supabase.co/storage/v1/object/public/board_files/videos/ooth9u67qm_1779432493197.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+
+  <!-- 푸터 — 박스 없음 -->
+  <div class="footer">
+    <div class="footer-closing">
+      함께 나누는 귀한 시간을 기대하겠습니다.<br>
+      건강하고 따뜻한 하루 되세요.
+    </div>
+    <div class="footer-org">한국아들러상담학회 부모교육분과</div>
+  </div>
+
+</div>
+</body>
+</html>
