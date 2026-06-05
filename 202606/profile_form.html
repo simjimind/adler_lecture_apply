@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>전문가 프로필 제출 — 한국아들러상담학회 부모교육분과</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;600;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    min-height: 100vh;
+    font-family: 'Noto Sans KR', sans-serif;
+    color: #1e2e3a;
+    background-image: url('./flower.webp');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: #e8f2fa;
+  }
+
+  /* ── 헤더 ── */
+  .header {
+    padding: 36px 20px 10px;
+    text-align: center;
+  }
+  .header-eyebrow {
+    font-size: 10.5px;
+    letter-spacing: 0.22em;
+    color: #7aafd8;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .header-title {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: #2a3a6e;
+    line-height: 1.45;
+  }
+  .header-sub {
+    font-size: 13px;
+    color: #5a7aae;
+    margin-top: 8px;
+    line-height: 1.7;
+    word-break: keep-all;
+  }
+
+  /* ── 폼 컨테이너 ── */
+  .form-wrapper {
+    max-width: 540px;
+    margin: 0 auto;
+    padding: 8px 16px 64px;
+  }
+
+  /* ── 폼 카드 (반투명) ── */
+  .form-card {
+    background: rgba(255, 255, 255, 0.86);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border-radius: 10px;
+    padding: 36px 32px;
+    box-shadow: 0 6px 32px rgba(30, 60, 100, 0.13);
+    border: 1px solid rgba(200, 220, 240, 0.6);
+  }
+
+  .form-card-title {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: #1a2840;
+    margin-bottom: 22px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid rgba(180, 210, 235, 0.7);
+  }
+
+  /* ── 필드 ── */
+  .field {
+    margin-bottom: 22px;
+  }
+
+  label {
+    display: block;
+    font-size: 13px;
+    font-weight: 500;
+    color: #2d4a68;
+    margin-bottom: 8px;
+  }
+  label .req { color: #c05050; margin-left: 2px; }
+  label .opt { font-size: 11.5px; font-weight: 400; color: #90aec8; margin-left: 5px; }
+
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    width: 100%;
+    padding: 11px 14px;
+    border: 1px solid #b8d0e8;
+    border-radius: 5px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 14px;
+    color: #1e2e3a;
+    background: rgba(248, 252, 255, 0.9);
+    transition: border-color 0.2s, background 0.2s;
+    outline: none;
+    -webkit-appearance: none;
+  }
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  textarea:focus {
+    border-color: #5a7aae;
+    background: rgba(255,255,255,0.97);
+  }
+
+  textarea {
+    min-height: 130px;
+    resize: vertical;
+    line-height: 1.85;
+  }
+
+  /* ── 사진 업로드 ── */
+  .photo-area {
+    border: 2px dashed #a8c8e4;
+    border-radius: 7px;
+    padding: 28px 20px;
+    text-align: center;
+    cursor: pointer;
+    background: rgba(240, 248, 255, 0.7);
+    transition: all 0.2s;
+    position: relative;
+  }
+  .photo-area:hover {
+    border-color: #5a7aae;
+    background: rgba(230, 242, 252, 0.85);
+  }
+  .photo-area input[type="file"] {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+  }
+  .upload-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(200, 225, 245, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 12px;
+  }
+  .upload-text {
+    font-size: 13.5px;
+    color: #4a6888;
+    line-height: 1.6;
+    font-weight: 500;
+  }
+  .upload-hint {
+    font-size: 11.5px;
+    color: #90aec8;
+    margin-top: 5px;
+  }
+
+  .photo-preview {
+    display: none;
+    text-align: center;
+    margin-top: 14px;
+  }
+  .photo-preview img {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #a8c8e4;
+    box-shadow: 0 2px 10px rgba(30,60,100,0.1);
+  }
+  .preview-name {
+    font-size: 11.5px;
+    color: #6a88a8;
+    margin-top: 7px;
+  }
+
+  /* ── 제출 버튼 ── */
+  .submit-btn {
+    width: 100%;
+    padding: 15px;
+    background: #ddeaf8;
+    color: #2a3a6e;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    border: 1.5px solid #7aafd8;
+    border-radius: 5px;
+    cursor: pointer;
+    letter-spacing: 0.05em;
+    transition: background 0.2s, transform 0.1s;
+    margin-top: 6px;
+  }
+  .submit-btn:hover:not(:disabled) { background: #cce0f4; transform: translateY(-1px); }
+  .submit-btn:disabled { opacity: 0.55; cursor: not-allowed; }
+
+  .form-notice {
+    font-size: 11.5px;
+    color: #90aec8;
+    line-height: 1.85;
+    text-align: center;
+    margin-top: 16px;
+    word-break: keep-all;
+  }
+
+  /* ── 에러 메시지 ── */
+  .error-msg {
+    display: none;
+    background: rgba(254,242,242,0.9);
+    border: 1px solid #fca5a5;
+    color: #b91c1c;
+    font-size: 13px;
+    padding: 12px 16px;
+    border-radius: 5px;
+    margin-bottom: 18px;
+    line-height: 1.65;
+  }
+
+  /* ── 완료 화면 ── */
+  .success-screen {
+    display: none;
+  }
+  .success-inner {
+    text-align: center;
+    padding: 40px 16px 20px;
+  }
+  .success-check {
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #2a3a6e 0%, #3d508a 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 24px;
+    box-shadow: 0 4px 18px rgba(42,58,110,0.3);
+  }
+  .success-title {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: #1a2840;
+    margin-bottom: 14px;
+  }
+  .success-body {
+    font-size: 14px;
+    color: #4a6888;
+    line-height: 2.0;
+    word-break: keep-all;
+    margin-bottom: 32px;
+  }
+  .adler-quote {
+    background: rgba(234, 242, 251, 0.9);
+    border-left: 3px solid #7aafd8;
+    border-radius: 0 6px 6px 0;
+    padding: 20px 24px;
+    text-align: left;
+    backdrop-filter: blur(3px);
+  }
+  .adler-quote-text {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 15.5px;
+    font-weight: 600;
+    color: #1a2840;
+    line-height: 1.8;
+    word-break: keep-all;
+  }
+  .adler-quote-source {
+    margin-top: 10px;
+    font-size: 12.5px;
+    color: #6a88a8;
+    font-style: italic;
+  }
+</style>
+</head>
+<body>
+
+<!-- 헤더 -->
+<div class="header">
+  <div class="header-eyebrow">EXPERT PROFILE · 한국아들러상담학회 부모교육분과</div>
+  <div class="header-title">전문가 선생님들의<br>프로필을 보내주세요</div>
+  <div class="header-sub">이음이 가족들에게 소개하는 장을 준비하고 있습니다.</div>
+</div>
+
+<!-- 폼 -->
+<div class="form-wrapper">
+
+  <div class="form-card" id="formCard">
+    <div class="form-card-title">선생님 정보를 입력해 주세요</div>
+
+    <div class="error-msg" id="errorMsg"></div>
+
+    <form id="profileForm" novalidate>
+
+      <div class="field">
+        <label>이름 <span class="req">*</span></label>
+        <input type="text" id="f_name" placeholder="성함을 입력해 주세요">
+      </div>
+
+      <div class="field">
+        <label>직함 / 자격 <span class="req">*</span></label>
+        <input type="text" id="f_title" placeholder="예: 아들러 부모교육 전문강사, 아동상담사">
+      </div>
+
+      <div class="field">
+        <label>소속 기관 <span class="opt">(선택)</span></label>
+        <input type="text" id="f_affiliation" placeholder="예: ○○상담연구소, ○○초등학교">
+      </div>
+
+      <div class="field">
+        <label>프로필 소개 <span class="req">*</span> <span class="opt">약 4줄</span></label>
+        <textarea id="f_profile" placeholder="활동분야와 전문성을 소개해주세요."></textarea>
+      </div>
+
+      <div class="field">
+        <label>나를 소개하는 한마디 <span class="opt">(선택)</span></label>
+        <input type="text" id="f_intro" placeholder="예: 아이들의 용기를 키워주는 것이 저의 기쁨입니다.">
+      </div>
+
+      <div class="field">
+        <label>프로필 사진 <span class="req">*</span></label>
+        <div class="photo-area" id="photoArea">
+          <input type="file" accept="image/*" id="photoFile">
+          <div class="upload-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#5a7aae" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="18" height="18" rx="2"/>
+              <circle cx="8.5" cy="8.5" r="1.5"/>
+              <polyline points="21 15 16 10 5 21"/>
+            </svg>
+          </div>
+          <div class="upload-text">클릭하여 사진을 선택해 주세요</div>
+          <div class="upload-hint">JPG · PNG · WEBP · 최대 5MB</div>
+        </div>
+        <div class="photo-preview" id="photoPreview">
+          <img id="previewImg" src="" alt="선택한 사진 미리보기">
+          <div class="preview-name" id="previewName"></div>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>이메일 <span class="req">*</span> <span class="opt">상담문의를 받으실 수 있는 이메일</span></label>
+        <input type="email" id="f_email" placeholder="example@email.com">
+      </div>
+
+      <button type="submit" class="submit-btn" id="submitBtn">프로필 보내기</button>
+
+      <div class="form-notice">
+        문의: simjimind@gmail.com
+      </div>
+
+    </form>
+  </div>
+
+  <!-- 완료 화면 -->
+  <div class="form-card success-screen" id="successScreen">
+    <div class="success-inner">
+      <div class="success-check">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="20 6 9 17 4 12"/>
+        </svg>
+      </div>
+      <div class="success-title">소중한 정보 감사합니다.</div>
+      <div class="success-body">
+        선생님의 정보가 잘 접수되었습니다.<br>
+        이음이 가족들께 멋지게 소개하겠습니다.
+      </div>
+      <div class="adler-quote">
+        <div class="adler-quote-text">세상은 지금 당신을 필요로 하고 있습니다.</div>
+        <div class="adler-quote-source">— 알프레드 아들러 —</div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /form-wrapper -->
+
+<script>
+const SUPABASE_URL = 'https://yuzelvimqcbdporvyunm.supabase.co';
+const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl1emVsdmltcWNiZHBvcnZ5dW5tIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg0OTA3MjMsImV4cCI6MjA5NDA2NjcyM30.BE2uw_ygWnSY_ddMquSDIFik2M7LbeJki7TCfZdnoi4';
+
+// 사진 미리보기
+document.getElementById('photoFile').addEventListener('change', function() {
+  const file = this.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = e => {
+    document.getElementById('previewImg').src = e.target.result;
+    document.getElementById('previewName').textContent = file.name;
+    document.getElementById('photoPreview').style.display = 'block';
+  };
+  reader.readAsDataURL(file);
+});
+
+// 폼 제출
+document.getElementById('profileForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+
+  const name      = document.getElementById('f_name').value.trim();
+  const title     = document.getElementById('f_title').value.trim();
+  const affiliate = document.getElementById('f_affiliation').value.trim();
+  const profile   = document.getElementById('f_profile').value.trim();
+  const intro     = document.getElementById('f_intro').value.trim();
+  const email     = document.getElementById('f_email').value.trim();
+  const file      = document.getElementById('photoFile').files[0];
+
+  const errEl = document.getElementById('errorMsg');
+  const btn   = document.getElementById('submitBtn');
+
+  errEl.style.display = 'none';
+
+  if (!name)    return showError('이름을 입력해 주세요.');
+  if (!title)   return showError('직함 또는 자격을 입력해 주세요.');
+  if (!profile) return showError('프로필 소개를 입력해 주세요.');
+  if (!file)    return showError('프로필 사진을 선택해 주세요.');
+  if (file.size > 5 * 1024 * 1024) return showError('사진 크기가 5MB를 초과합니다. 더 작은 사진을 사용해 주세요.');
+  if (!email)   return showError('상담문의용 이메일을 입력해 주세요.');
+
+  btn.disabled = true;
+  btn.textContent = '업로드 중...';
+
+  try {
+    // 1. 사진 → Supabase Storage
+    const ext = (file.name.split('.').pop() || 'jpg').toLowerCase();
+    const safeExt = ['jpg','jpeg','png','webp'].includes(ext) ? ext : 'jpg';
+    const filename = Date.now() + '_' + Math.random().toString(36).slice(2,8) + '.' + safeExt;
+
+    const uploadRes = await fetch(
+      SUPABASE_URL + '/storage/v1/object/adler-profiles/' + filename,
+      {
+        method: 'POST',
+        headers: {
+          'Authorization': 'Bearer ' + SUPABASE_KEY,
+          'Content-Type': file.type || 'image/jpeg',
+        },
+        body: file
+      }
+    );
+
+    if (!uploadRes.ok) {
+      const t = await uploadRes.text();
+      throw new Error('사진 업로드 실패 — ' + t);
+    }
+
+    const photoUrl = SUPABASE_URL + '/storage/v1/object/public/adler-profiles/' + filename;
+
+    // 2. 프로필 → DB
+    const saveRes = await fetch(SUPABASE_URL + '/rest/v1/adler_experts', {
+      method: 'POST',
+      headers: {
+        'Authorization': 'Bearer ' + SUPABASE_KEY,
+        'apikey': SUPABASE_KEY,
+        'Content-Type': 'application/json',
+        'Prefer': 'return=minimal'
+      },
+      body: JSON.stringify({
+        name:        name,
+        title:       title,
+        affiliation: affiliate || null,
+        profile:     profile,
+        intro:       intro || null,
+        photo_url:   photoUrl,
+        email:       email
+      })
+    });
+
+    if (!saveRes.ok) {
+      const t = await saveRes.text();
+      throw new Error('저장 실패 — ' + t);
+    }
+
+    // 3. 완료 화면
+    document.getElementById('formCard').style.display = 'none';
+    const sc = document.getElementById('successScreen');
+    sc.style.display = 'block';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+
+  } catch (err) {
+    showError('오류가 발생했습니다: ' + err.message);
+    btn.disabled = false;
+    btn.textContent = '프로필 보내기';
+  }
+
+  function showError(msg) {
+    errEl.textContent = msg;
+    errEl.style.display = 'block';
+    errEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+});
+</script>
+</body>
+</html>
