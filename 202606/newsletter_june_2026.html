@@ -49,28 +49,29 @@
   }
   .nav-bar a:hover { color: #2d5a8e; }
 
-  /* ── 헤더 / 히어로 ── */
+  /* ── 헤더 / 히어로 + 메인스토리 통합 ── */
   .hero {
     position: relative;
+    background-image: url('https://raw.githubusercontent.com/simjimind/simjimind.github.io/main/image/sea-4768869_1280.jpg');
+    background-size: cover;
+    background-position: center 30%;
     background-color: #e8f0f8;
     text-align: center;
     padding: 0;
     overflow: hidden;
   }
-  .hero img.hero-photo {
-    width: 100%;
-    display: block;
-    max-height: 320px;
-    object-fit: cover;
-    object-position: center 30%;
-    filter: saturate(0.9) brightness(0.97);
-  }
+  .hero img.hero-photo { display: none; }
   .hero-overlay {
-    position: absolute;
-    bottom: 0; left: 0; right: 0;
-    background: linear-gradient(to top, rgba(244,248,252,0.96) 0%, rgba(244,248,252,0.55) 60%, transparent 100%);
-    padding: 48px 28px 28px;
+    padding: 52px 28px 32px;
     text-align: center;
+    background: linear-gradient(
+      to bottom,
+      rgba(244,248,252,0.05) 0%,
+      rgba(244,248,252,0.15) 30%,
+      rgba(244,248,252,0.38) 60%,
+      rgba(244,248,252,0.52) 80%,
+      rgba(244,248,252,0.57) 100%
+    );
   }
   .hero-label {
     display: inline-block;
@@ -93,7 +94,7 @@
   .hero-sub {
     font-family: 'Noto Sans KR', sans-serif;
     font-size: 13px;
-    color: #6a88a8;
+    color: #5a7898;
     letter-spacing: 0.04em;
   }
 
@@ -145,10 +146,10 @@
 
   /* ── 메인스토리 ── */
   .main-story {
-    background: #eaf2fb;
-    padding: 32px 32px 28px;
-    border-top: 1px solid #d0e2f0;
-    border-bottom: 1px solid #d0e2f0;
+    background: transparent;
+    padding: 16px 32px 32px;
+    border-bottom: none;
+    text-align: left;
   }
   .section-eyebrow {
     font-family: 'Noto Sans KR', sans-serif;
@@ -445,11 +446,12 @@
 
   /* ── 아들러 명언 블록 ── */
   .quote-block {
-    background: #eaf2fb;
-    border-left: 3px solid #7aafd8;
+    background: rgba(234,242,251,0.60);
     padding: 18px 22px;
     margin: 20px 0 4px;
-    border-radius: 0 3px 3px 0;
+    border-radius: 3px;
+    backdrop-filter: blur(2px);
+    text-align: center;
   }
   .quote-text {
     font-family: 'Noto Serif KR', serif;
@@ -520,43 +522,37 @@
 
     <!-- 상단 네비 -->
     <div class="nav-bar">
-      <a href="https://cafe.naver.com/adlerparents">아들러 마을로</a>
-      <a href="https://cafe.naver.com/f-e/cafes/31682183/menus/16?viewType=L">부모교육 이야기</a>
+      <a href="https://cafe.naver.com/adlerparents" target="_blank" rel="noopener">아들러 마을로</a>
+      <a href="https://cafe.naver.com/f-e/cafes/31682183/menus/16?viewType=L" target="_blank" rel="noopener">부모교육 이야기</a>
     </div>
 
-    <!-- 히어로 -->
+    <!-- 히어로 + 메인스토리 통합 (이미지 배경 연결) -->
     <div class="hero">
       <img class="hero-photo"
         src="https://raw.githubusercontent.com/simjimind/simjimind.github.io/main/image/sea-4768869_1280.jpg"
         alt="경쟁을 넘어서는 협력 — 6월호 헤더 이미지">
       <div class="hero-overlay">
         <span class="hero-label">2026 June · Vol.06</span>
-        <div class="hero-title">아들러 부모편지</div>
-        <div class="hero-sub">협력의 계절 — 함께라서 가능한 것들</div>
-      </div>
-    </div>
 
-    <!-- 메인스토리 -->
-    <div class="main-story">
-      <div class="section-eyebrow">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#2d5a8e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle; margin-right:5px;"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
-        메인 스토리
-      </div>
-      <div class="main-story-title">경쟁을 넘어서는 협력<br><span style="font-size:16px; font-weight:400; color:#6a88a8;">엉뚱한 돈키호테와 AI의 시대</span></div>
-      <div class="main-story-body">
-        AI가 모든 것을 바꾸는 시대,<br>
-        아이들에게 필요한 것이 정답과 경쟁력일까요,<br>
-        아니면 엉뚱한 꿈과 모험을 담은 용기일까요?<br><br>
-        서로의 강점을 존중하며 협력하는 힘이<br>
-        미래시대의 자산입니다.
-      </div>
+        <!-- 메인스토리 — overlay 안에 통합 -->
+        <div class="main-story">
+          <div class="main-story-title">경쟁을 넘어서는 협력<br><span style="font-size:16px; font-weight:400; color:#6a88a8;">엉뚱한 돈키호테와 AI의 시대</span></div>
+          <div class="main-story-body">
+            AI가 모든 것을 바꾸는 시대,<br>
+            아이들에게 필요한 것이 정답과 경쟁력일까요,<br>
+            아니면 엉뚱한 꿈과 모험을 담은 용기일까요?<br><br>
+            서로의 강점을 존중하며 협력하는 힘이<br>
+            미래시대의 자산입니다.
+          </div>
 
-      <div class="quote-block">
-        <div class="quote-text">"협력은 인간이 가진 가장 강력한 능력이다.<br>그것은 연습을 통해 길러지며,<br>부모의 일상에서 시작된다."</div>
-        <div class="quote-source">— 알프레드 아들러 —</div>
-      </div>
+          <div class="quote-block">
+            <div class="quote-text">"협력은 인간이 가진 가장 강력한 능력이다.<br>그것은 연습을 통해 길러지며,<br>부모의 일상에서 시작된다."</div>
+            <div class="quote-source">— 알프레드 아들러 —</div>
+          </div>
 
-      <a href="https://cafe.naver.com/adlerparents/book5122971/114" class="story-link">전체 이야기 읽기</a>
+          <a href="https://cafe.naver.com/adlerparents/book5122971/114" class="story-link" target="_blank" rel="noopener">전체 이야기 읽기</a>
+        </div>
+      </div>
     </div>
 
     <!-- 격려의 메시지 -->
@@ -570,14 +566,14 @@
         카드 한 장, 편지 한 통으로 마음을 전해보세요.
       </p>
       <div class="encourage-cards">
-        <a href="https://cafe.naver.com/adlerparents/104" class="encourage-card">
+        <a href="https://cafe.naver.com/adlerparents/104" class="encourage-card" target="_blank" rel="noopener">
           <span class="ec-icon">
             <img src="https://www.simjimind.co.kr/letter.webp" width="54" height="54" style="object-fit:contain;">
           </span>
           <span class="ec-title">격려카드</span>
           <span class="ec-sub">마음을 담은 카드 보내기</span>
         </a>
-        <a href="https://cafe.naver.com/adlerparents/107" class="encourage-card">
+        <a href="https://cafe.naver.com/adlerparents/107" class="encourage-card" target="_blank" rel="noopener">
           <span class="ec-icon">
             <img src="https://www.simjimind.co.kr/letter2.webp" width="47" height="47" style="object-fit:contain;">
           </span>
@@ -587,13 +583,33 @@
       </div>
     </div>
 
+    <!-- 7월 공개강좌 배너 -->
+    <div style="padding: 20px 32px 0; background: #f4f8fc;">
+      <a href="https://simjimind.github.io/adler_lecture_apply/202607/apply_july.html" style="display:block; text-decoration:none;" target="_blank" rel="noopener">
+        <img src="https://simjimind.github.io/adler_lecture_apply/202607/202607_banner.png"
+          alt="7월 공개강좌 신청하기"
+          style="width:100%; display:block; border-radius:4px; margin-bottom:20px;">
+      </a>
+    </div>
+
+    <!-- 7월 배너 아래 통계 문구 -->
+    <div style="background:#f4f8fc; padding:18px 32px 22px; text-align:center;">
+      <p style="font-size:13.5px; color:#3a5070; line-height:2.0; word-break:keep-all;">
+        2024년 조사 결과, 맞벌이 가구의 62%가 조부모님께 자녀 돌봄을 의탁하고 있습니다.<br>
+        빠르게 변화하는 세상 속에서 조부모님과 함께하는 자녀 이해는<br>폭넓고 새로운 비전과 대안을 마련할 것입니다.
+      </p>
+      <p style="font-size:11.5px; color:#8aa8c0; line-height:1.8; margin-top:8px; word-break:keep-all;">
+        * 2024 서울시 양육자 실태조사 /
+        <a href="https://bravo.etoday.co.kr/view/atc_view/18419" style="color:#5b8fc4; text-decoration:none; border-bottom:1px solid rgba(91,143,196,0.4);" target="_blank" rel="noopener">데이터로 읽는 황혼육아의 현실 — 브라보마이라이프</a>
+      </p>
+    </div>
+
     <!-- 5월 강좌 감사 -->
     <div class="thanks-section">
-      <img src="https://raw.githubusercontent.com/simjimind/adler_lecture_apply/main/5/open2.png" alt="5월 공개강좌" style="width:100%; display:block; margin-bottom:16px; border-radius:3px;">
       <div class="thanks-text">
         5월 공개강좌에 함께해 주심에 깊이 감사드립니다.<br>
         강좌 내용과 따뜻한 후기는 아래에서 확인하실 수 있습니다.<br>
-        <a href="https://cafe.naver.com/adlerparents/122">5월 공개강좌 이야기 보기 →</a>
+        <a href="https://cafe.naver.com/adlerparents/122" target="_blank" rel="noopener">5월 공개강좌 이야기 보기 →</a>
       </div>
     </div>
 
@@ -609,7 +625,7 @@
         </div>
         <div class="qa-content">
           <div class="qa-q">다른 아이들을 너무 챙기는 아이,<br>말리고 싶어요.</div>
-          <a href="https://cafe.naver.com/adlerparents/110" class="qa-link">답변 읽기 →</a>
+          <a href="https://cafe.naver.com/adlerparents/110" class="qa-link" target="_blank" rel="noopener">답변 읽기 →</a>
         </div>
       </div>
       <div class="qa-item">
@@ -618,56 +634,82 @@
         </div>
         <div class="qa-content">
           <div class="qa-q">아이의 손목에서 상처를 발견했습니다.<br>어쩌면 좋을까요.</div>
-          <a href="https://cafe.naver.com/adlerparents/106" class="qa-link">답변 읽기 →</a>
+          <a href="https://cafe.naver.com/adlerparents/106" class="qa-link" target="_blank" rel="noopener">답변 읽기 →</a>
         </div>
       </div>
     </div>
 
-    <!-- 연리지 34기 배너 -->
-    <div class="lecture-banner">
-      <div class="section-eyebrow" style="color:rgba(255,255,255,0.7);">
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle; margin-right:5px;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        YEONRIJI · 연리지 34기
-      </div>
-      <div class="lecture-title">치유와 지혜의 장<br>한국형 아들러 부모교육 초급</div>
-      <div class="lecture-meta">
-        <div class="lecture-meta-row">
-          <span class="lecture-meta-label">시작</span>
-          <span>2026년 6월 24일 (화)</span>
-        </div>
-        <div class="lecture-meta-row">
-          <span class="lecture-meta-label">방식</span>
-          <span>온라인 ZOOM</span>
-        </div>
-        <div class="lecture-meta-row">
-          <span class="lecture-meta-label">대상</span>
-          <span>부모님, 교육자, 상담자 누구나</span>
-        </div>
-      </div>
-      <a href="https://cafe.naver.com/adlerparents/123" class="lecture-btn">자세히 보기</a>
-    </div>
+    <!-- 치유와 지혜의 장 (3개 통합 섹션) -->
+    <div style="background: linear-gradient(180deg, #dbeaf8 0%, #c8ddf0 100%); padding: 28px 32px 32px; border-top: 1px solid #b8d0e8;">
 
-    <!-- 전문가 프로필 배너 -->
-    <div style="background: linear-gradient(135deg, #2a3a6e 0%, #3d508a 100%); padding: 28px 32px;">
-      <div class="section-eyebrow" style="color:rgba(255,255,255,0.7);">
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle; margin-right:5px;"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-        EXPERT PROFILE · 전문가 선생님들
+      <!-- 섹션 헤더 -->
+      <div style="text-align:center; margin-bottom:22px;">
+        <div style="font-family:'Noto Sans KR',sans-serif; font-size:10.5px; font-weight:700; letter-spacing:0.2em; color:#2d5a8e; text-transform:uppercase; margin-bottom:6px;">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#2d5a8e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle; margin-right:5px;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          HEALING &amp; WISDOM
+        </div>
+        <div style="font-family:'Noto Serif KR',serif; font-size:19px; font-weight:700; color:#1a2840; line-height:1.4;">치유와 지혜의 장</div>
+        <div style="width:36px; height:2px; background:#7aafd8; margin:10px auto 0;"></div>
       </div>
-      <div class="lecture-title">전문가 선생님들의<br>프로필을 보내주세요</div>
-      <p style="font-size:13.5px; color:rgba(255,255,255,0.82); line-height:1.9; margin-bottom:20px; word-break:keep-all;">
-        부모교육분과의 전문가를 이음이 가족들에게<br>소개하는 장을 준비하고 있습니다.
-      </p>
-      <a href="https://cafe.naver.com/adlerparents/124" class="lecture-btn">프로필 보내기</a>
+
+      <!-- ① 놀이치료 독서모임 -->
+      <a href="https://cafe.naver.com/adlerparents/120" style="display:block; background:#ffffff; border:1px solid #b0cce8; border-radius:6px; padding:18px 20px; margin-bottom:10px; text-decoration:none;" target="_blank" rel="noopener">
+        <div style="display:flex; align-items:center; gap:14px;">
+          <div style="flex-shrink:0; width:48px; height:48px; background:#ffffff; border:1px solid #d0e4f4; border-radius:50%; display:flex; align-items:center; justify-content:center; overflow:hidden;">
+            <img src="https://raw.githubusercontent.com/simjimind/nabi_apply_2026/refs/heads/main/nabi.png" width="38" height="38" style="object-fit:contain; display:block;">
+          </div>
+          <div style="flex:1;">
+            <div style="font-size:10px; font-weight:700; letter-spacing:0.15em; color:#5b8fc4; text-transform:uppercase; margin-bottom:4px;">BOOK CLUB · 독서모임</div>
+            <div style="font-family:'Noto Serif KR',serif; font-size:14.5px; font-weight:700; color:#1a2840; line-height:1.45; word-break:keep-all;">놀이치료에 관심 있는 분들은<br>함께 책읽어요</div>
+          </div>
+          <div style="flex-shrink:0; color:#7aafd8; font-size:16px; font-weight:300;">→</div>
+        </div>
+      </a>
+
+      <!-- ② 연리지 34기 -->
+      <a href="https://cafe.naver.com/adlerparents/123" style="display:block; background:#ffffff; border:1px solid #b0cce8; border-radius:6px; padding:18px 20px; margin-bottom:10px; text-decoration:none;" target="_blank" rel="noopener">
+        <div style="display:flex; align-items:center; gap:14px;">
+          <div style="flex-shrink:0; width:48px; height:48px; background:#ffffff; border:1px solid #d0e4f4; border-radius:50%; display:flex; align-items:center; justify-content:center; overflow:hidden;">
+            <img src="https://raw.githubusercontent.com/simjimind/nabi_apply_2026/refs/heads/main/tree.png" width="38" height="38" style="object-fit:contain; display:block;">
+          </div>
+          <div style="flex:1;">
+            <div style="font-size:10px; font-weight:700; letter-spacing:0.15em; color:#1e5080; text-transform:uppercase; margin-bottom:4px;">YEONRIJI · 연리지 34기</div>
+            <div style="font-family:'Noto Serif KR',serif; font-size:14.5px; font-weight:700; color:#1a2840; line-height:1.45; word-break:keep-all;">한국형 아들러 부모교육 초급</div>
+            <div style="margin-top:6px; font-size:12px; color:#6a88a8; line-height:1.7;">
+              2026년 6월 24일 (화) · 온라인 ZOOM
+            </div>
+          </div>
+          <div style="flex-shrink:0; color:#7aafd8; font-size:16px; font-weight:300;">→</div>
+        </div>
+      </a>
+
+      <!-- ③ 전문가 프로필 -->
+      <a href="https://simjimind.github.io/adler_lecture_apply/202606/profile_form.html" style="display:block; background:#ffffff; border:1px solid #b0cce8; border-radius:6px; padding:18px 20px; text-decoration:none;" target="_blank" rel="noopener">
+        <div style="display:flex; align-items:center; gap:14px;">
+          <div style="flex-shrink:0; width:48px; height:48px; background:#ffffff; border:1px solid #d0e4f4; border-radius:50%; display:flex; align-items:center; justify-content:center; overflow:hidden;">
+            <img src="https://raw.githubusercontent.com/simjimind/nabi_apply_2026/refs/heads/main/Flower.png" width="38" height="38" style="object-fit:contain; display:block;">
+          </div>
+          <div style="flex:1;">
+            <div style="font-size:10px; font-weight:700; letter-spacing:0.15em; color:#2a3a6e; text-transform:uppercase; margin-bottom:4px;">EXPERT PROFILE · 전문가 선생님</div>
+            <div style="font-family:'Noto Serif KR',serif; font-size:14.5px; font-weight:700; color:#1a2840; line-height:1.45; word-break:keep-all;">전문가 선생님들의<br>프로필을 보내주세요</div>
+            <div style="margin-top:6px; font-size:12px; color:#6a88a8; line-height:1.7;">
+              이음이 가족들께 소개하는 장을 준비중입니다
+            </div>
+          </div>
+          <div style="flex-shrink:0; color:#7aafd8; font-size:16px; font-weight:300;">→</div>
+        </div>
+      </a>
+
     </div>
 
 
     <!-- CTA 섹션 -->
     <div class="cta-section">
-      <a href="https://page.stibee.com/subscriptions/484015" class="cta-btn cta-btn-recommend">
+      <a href="https://page.stibee.com/subscriptions/484015" class="cta-btn cta-btn-recommend" target="_blank" rel="noopener">
         이음이를 좋은 분들께 추천해주세요
         <span class="cta-btn-sub">소중한 분들과 함께 성장하는 공간을 나눠요</span>
       </a>
-      <a href="https://forms.gle/FM33pjMZLnhcoqFK8" class="cta-btn cta-btn-worry">
+      <a href="https://forms.gle/FM33pjMZLnhcoqFK8" class="cta-btn cta-btn-worry" target="_blank" rel="noopener">
         요즘 고민이 있다면 함께 나눠요
         <span class="cta-btn-sub">익명을 보장합니다</span>
       </a>
@@ -677,8 +719,8 @@
     <div class="footer">
       <div class="footer-logo">한국아들러상담학회 부모교육분과</div>
       <div class="footer-icons">
-        <a href="https://cafe.naver.com/adlerparents" class="footer-icon-link" title="네이버 카페">N</a>
-        <a href="https://www.adler1870.or.kr/" class="footer-icon-link" title="홈">⌂</a>
+        <a href="https://cafe.naver.com/adlerparents" class="footer-icon-link" title="네이버 카페" target="_blank" rel="noopener">N</a>
+        <a href="https://www.adler1870.or.kr/" class="footer-icon-link" title="홈" target="_blank" rel="noopener">⌂</a>
       </div>
       <div class="footer-info">
         한국아들러상담학회 부모교육분과<br>
