@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+ <!-- Open Graph / KakaoTalk 미리보기 -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://simjimind.github.io/adler_lecture_apply/202607/newsletter_202607.html">
+<meta property="og:title" content="아들러 부모편지 7월호 — 다시, 참교육의 시대">
+<meta property="og:description" content="2026년 7월 · 친절하되 단호하게 — AI가 알려줄 수 없는 나만의 존재감을 찾는 교육">
+<meta property="og:image" content="https://simjimind.github.io/adler_lecture_apply/202607/202607_hero.png">
+<meta property="og:image:width" content="740">
+<meta property="og:image:height" content="416">
+<meta property="og:locale" content="ko_KR">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>아들러 부모편지 7월호 — 다시, 참교육의 시대</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;600;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background-color: #f2dfc9;
+    font-family: 'Noto Sans KR', sans-serif;
+    color: #3a2c22;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .email-wrapper {
+    width: 100%;
+    padding: 32px 16px 48px;
+    background-color: #f2dfc9;
+  }
+
+  .email-body {
+    max-width: 580px;
+    margin: 0 auto;
+    background-color: #fdf8f2;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(110,65,25,0.12);
+  }
+
+  /* ── 상단 네비 ── */
+  .nav-bar {
+    background-color: #f9ecdd;
+    border-bottom: 1px solid #e8d2b8;
+    padding: 12px 28px;
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+  }
+  .nav-bar a {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 12px;
+    color: #8a6a52;
+    text-decoration: none;
+    letter-spacing: 0.03em;
+  }
+  .nav-bar a:hover { color: #b5693a; }
+
+  /* ── 헤더 / 히어로 + 메인스토리 통합 ── */
+  .hero {
+    position: relative;
+    background-image: url('https://simjimind.github.io/adler_lecture_apply/202607/202607_hero.png');
+    background-size: cover;
+    background-position: center 30%;
+    background-color: #f9ecdd;
+    text-align: center;
+    padding: 0;
+    overflow: hidden;
+  }
+  .hero img.hero-photo { display: none; }
+  .hero-overlay {
+    padding: 52px 28px 32px;
+    text-align: center;
+    background: linear-gradient(
+      to bottom,
+      rgba(253,248,242,0.05) 0%,
+      rgba(253,248,242,0.15) 30%,
+      rgba(253,248,242,0.38) 60%,
+      rgba(253,248,242,0.52) 80%,
+      rgba(253,248,242,0.57) 100%
+    );
+  }
+  .hero-label {
+    display: inline-block;
+    font-family: 'Noto Serif KR', serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    color: #b5693a;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .hero-title {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: #3d2a1c;
+    line-height: 1.3;
+    margin-bottom: 4px;
+  }
+  .hero-sub {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 13px;
+    color: #8a6a52;
+    letter-spacing: 0.04em;
+  }
+
+  /* ── 구분선 장식 ── */
+  .divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0 28px;
+    margin: 4px 0;
+  }
+  .divider-line { flex: 1; height: 1px; background: #e2cbaf; }
+  .divider-dot { width: 5px; height: 5px; border-radius: 50%; background: #d59a68; }
+
+  /* ── 섹션 공통 ── */
+  .section {
+    padding: 28px 32px;
+  }
+  .section + .section {
+    border-top: 1px solid #ecd9c2;
+  }
+
+  /* ── 인사말 ── */
+  .greeting {
+    padding: 32px 36px 24px;
+    text-align: center;
+  }
+  .greeting-month {
+    display: inline-block;
+    font-family: 'Noto Serif KR', serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    color: #b5693a;
+    background: #f6e2cb;
+    padding: 4px 14px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+  }
+  .greeting p {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 14.5px;
+    line-height: 2.0;
+    color: #4d382a;
+    word-break: keep-all;
+    text-wrap: pretty;
+  }
+  .greeting p + p { margin-top: 16px; }
+
+  /* ── 메인스토리 ── */
+  .main-story {
+    background: transparent;
+    padding: 16px 32px 32px;
+    border-bottom: none;
+    text-align: left;
+  }
+  .section-eyebrow {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    color: #b5693a;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .main-story-title {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 21px;
+    font-weight: 700;
+    color: #3d2a1c;
+    line-height: 1.4;
+    margin-bottom: 14px;
+  }
+  .main-story-body {
+    font-size: 14px;
+    line-height: 2.0;
+    color: #5a4232;
+    word-break: keep-all;
+    text-wrap: pretty;
+  }
+  .story-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 20px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: #b5693a;
+    text-decoration: none;
+    border-bottom: 1.5px solid rgba(181,105,58,0.3);
+    padding-bottom: 1px;
+    transition: all 0.2s;
+  }
+  .story-link:hover { border-bottom-color: #b5693a; }
+  .story-link::after { content: '→'; font-size: 13px; }
+
+  /* ── 격려 섹션 ── */
+  .encourage-section {
+    padding: 26px 32px;
+    background: #fdf8f2;
+    border-bottom: 1px solid #ecd9c2;
+  }
+  .encourage-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 14px;
+  }
+  .encourage-card {
+    display: block;
+    background: #faeddd;
+    border: 1px solid #e4c5a2;
+    border-radius: 4px;
+    padding: 16px 16px 14px;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.2s;
+  }
+  .encourage-card:hover {
+    background: #b5693a;
+    border-color: #b5693a;
+  }
+  .encourage-card:hover .ec-title,
+  .encourage-card:hover .ec-sub { color: #fff; }
+  .ec-icon {
+    font-size: 22px;
+    margin-bottom: 6px;
+    display: block;
+  }
+  .ec-title {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: #3d2a1c;
+    margin-bottom: 4px;
+    display: block;
+  }
+  .ec-sub {
+    font-size: 11.5px;
+    color: #96755e;
+    display: block;
+    line-height: 1.5;
+    transition: color 0.2s;
+  }
+
+  /* ── 강좌 감사 배너 ── */
+  .thanks-section {
+    background: #fdf8f2;
+    padding: 22px 32px;
+    border-top: 1px solid #ecd9c2;
+    border-bottom: 1px solid #ecd9c2;
+  }
+  .thanks-text {
+    font-size: 13.5px;
+    color: #6e5140;
+    line-height: 1.9;
+    text-align: center;
+    word-break: keep-all;
+  }
+  .thanks-text a {
+    color: #b5693a;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(181,105,58,0.3);
+  }
+
+  /* ── 연리지 배너 (CSS 유지, 섹션은 제거됨) ── */
+  .lecture-banner {
+    background: linear-gradient(135deg, #9c5528 0%, #c2793f 100%);
+    padding: 28px 32px;
+  }
+  .lecture-banner .section-eyebrow { color: rgba(255,255,255,0.65); }
+  .lecture-title {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.45;
+    margin-bottom: 16px;
+  }
+  .lecture-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    margin-bottom: 20px;
+  }
+  .lecture-meta-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 13px;
+    color: rgba(255,255,255,0.82);
+    line-height: 1.5;
+  }
+  .lecture-meta-label {
+    font-weight: 600;
+    color: #f0cfa8;
+    min-width: 42px;
+    flex-shrink: 0;
+  }
+  .lecture-btn {
+    display: inline-block;
+    background: #ffffff;
+    color: #b5693a;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 11px 24px;
+    border-radius: 3px;
+    text-decoration: none;
+    letter-spacing: 0.03em;
+    margin-right: 8px;
+    margin-bottom: 8px;
+  }
+  .lecture-btn:hover { background: #f8ede0; }
+  .lecture-btn-outline {
+    display: inline-block;
+    background: transparent;
+    color: #ffffff;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 10px 20px;
+    border-radius: 3px;
+    border: 1px solid rgba(255,255,255,0.45);
+    text-decoration: none;
+    letter-spacing: 0.03em;
+    margin-bottom: 8px;
+  }
+  .lecture-btn-outline:hover { background: rgba(255,255,255,0.1); }
+
+  /* ── 이럴땐 이렇게 ── */
+  .qa-section {
+    padding: 26px 32px;
+    border-bottom: 1px solid #ecd9c2;
+  }
+  .qa-item {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    padding: 16px 0;
+  }
+  .qa-item + .qa-item { border-top: 1px dashed #e2cbaf; }
+  .qa-thumb {
+    flex-shrink: 0;
+    width: 120px;
+    height: 90px;
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid #e2cbaf;
+    background: #f6e2cb;
+  }
+  .qa-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+  }
+  .qa-content { flex: 1; }
+  .qa-q {
+    font-size: 14px;
+    font-weight: 500;
+    color: #3a2c22;
+    line-height: 1.6;
+    word-break: keep-all;
+    margin-bottom: 8px;
+  }
+  .qa-link {
+    font-size: 12px;
+    color: #b5693a;
+    text-decoration: none;
+    font-weight: 500;
+    border-bottom: 1px solid rgba(181,105,58,0.25);
+  }
+
+  /* ── 치유와 지혜 ── */
+  .wisdom-section {
+    padding: 26px 32px;
+    background: #f8ede0;
+    border-bottom: 1px solid #ecd9c2;
+  }
+  .wisdom-items { display: flex; flex-direction: column; gap: 12px; }
+  .wisdom-item {
+    background: #fdf8f2;
+    border: 1px solid #e2cbaf;
+    border-radius: 3px;
+    padding: 16px 18px;
+    text-decoration: none;
+    display: block;
+    transition: all 0.2s;
+  }
+  .wisdom-item:hover { border-color: #b5693a; background: #f8e8d5; }
+  .wisdom-item-title {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: #3d2a1c;
+    line-height: 1.5;
+    word-break: keep-all;
+    margin-bottom: 3px;
+  }
+  .wisdom-item-sub {
+    font-size: 12px;
+    color: #96755e;
+  }
+
+  /* ── CTA 섹션 ── */
+  .cta-section {
+    padding: 28px 32px;
+    background: #fdf8f2;
+    border-top: 1px solid #ecd9c2;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .cta-btn {
+    display: block;
+    text-align: center;
+    padding: 16px 20px;
+    border-radius: 3px;
+    text-decoration: none;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.5;
+    transition: all 0.2s;
+    word-break: keep-all;
+  }
+  .cta-btn-recommend {
+    background: #f6e2cb;
+    border: 1px solid #e6c69e;
+    color: #5c3a20;
+  }
+  .cta-btn-recommend:hover { background: #f3ddc0; border-color: #d9a874; }
+  .cta-btn-worry {
+    background: #f8ede0;
+    border: 1px solid #e2cbaf;
+    color: #4d382a;
+  }
+  .cta-btn-worry:hover { background: #f6e6d2; }
+  .cta-btn-sub {
+    display: block;
+    font-size: 11.5px;
+    color: #96755e;
+    margin-top: 3px;
+    font-weight: 400;
+  }
+
+  /* ── 아들러 명언 블록 ── */
+  .quote-block {
+    background: rgba(250,240,228,0.62);
+    padding: 18px 22px;
+    margin: 20px 0 4px;
+    border-radius: 3px;
+    backdrop-filter: blur(2px);
+    text-align: center;
+  }
+  .quote-text {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 14.5px;
+    font-weight: 600;
+    color: #3d2a1c;
+    line-height: 1.75;
+    word-break: keep-all;
+  }
+  .quote-source {
+    margin-top: 8px;
+    font-size: 12px;
+    color: #96755e;
+    font-style: italic;
+  }
+
+  /* ── 푸터 ── */
+  .footer {
+    background: #4a3020;
+    padding: 28px 32px;
+    text-align: center;
+  }
+  .footer-logo {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: #f4dfc8;
+    margin-bottom: 6px;
+  }
+  .footer-icons {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin: 14px 0;
+  }
+  .footer-icon-link {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #dcb896;
+    font-size: 13px;
+    transition: background 0.2s;
+  }
+  .footer-icon-link:hover { background: rgba(255,255,255,0.25); color: #fff; }
+  .footer-info {
+    font-size: 11.5px;
+    color: #b39176;
+    line-height: 1.9;
+  }
+  .footer-info a { color: #b39176; text-decoration: none; }
+  .footer-info a:hover { color: #dcb896; }
+  .footer-unsubscribe {
+    margin-top: 10px;
+    font-size: 11px;
+    color: #8a6a52;
+  }
+  .footer-unsubscribe a { color: #8a6a52; }
+</style>
+</head>
+<body>
+<div class="email-wrapper">
+  <div class="email-body">
+
+    <!-- 상단 네비 -->
+    <div class="nav-bar">
+      <a href="https://cafe.naver.com/adlerparents" target="_blank" rel="noopener">아들러 마을로</a>
+      <a href="https://cafe.naver.com/f-e/cafes/31682183/menus/16?viewType=L" target="_blank" rel="noopener">부모교육 이야기</a>
+    </div>
+
+    <!-- 히어로 + 메인스토리 통합 (이미지 배경 연결) -->
+    <div class="hero">
+      <img class="hero-photo"
+        src="https://simjimind.github.io/adler_lecture_apply/202607/202607_hero.png"
+        alt="다시, 참교육의 시대 — 7월호 헤더 이미지">
+      <div class="hero-overlay">
+        <span class="hero-label">2026 July · Vol.07</span>
+
+        <!-- 메인스토리 — overlay 안에 통합 -->
+        <div class="main-story">
+          <div class="main-story-title">다시, 참교육의 시대<br><span style="font-size:16px; font-weight:400; color:#96755e;">AI시대의 부모교육, 마지막 이야기</span></div>
+          <div class="main-story-body">
+            영화보다 더한 현실,<br>
+            조롱이 밈이 되어버린 교실.<br>
+            지금 아이들에게 필요한 것은<br>
+            성적이 아니라 자신을 아는 힘입니다.<br><br>
+            AI가 절대 알려줄 수 없는 나만의 존재감,<br>
+            그 처음으로 돌아가는 교육을 이야기합니다.
+          </div>
+
+          <div class="quote-block">
+            <div class="quote-text">"사랑한다는 것이 허용한다는 것이 아니며,<br>공감한다는 것이 편들어 준다는 것이 아니다.<br>친절하되, 단호하게."</div>
+            <div class="quote-source">— 본문 「다시, 참교육의 시대」 중 —</div>
+          </div>
+
+          <a href="https://cafe.naver.com/adlerparents/book5122971/127" class="story-link" target="_blank" rel="noopener">전체 이야기 읽기</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 격려의 메시지 -->
+    <div class="encourage-section">
+      <div class="section-eyebrow">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#b5693a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle; margin-right:5px;"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        격려의 메시지를 보내주세요
+      </div>
+      <p style="font-size:13.5px; color:#6e5140; line-height:1.8; word-break:keep-all;">
+        "빨리 좀 해!" 대신 어떤 말을 건넬 수 있을까요?<br>
+        카드를 한 장씩 뒤집으며 격려의 언어를 연습해보세요.
+      </p>
+      <div class="encourage-cards" style="grid-template-columns: 1fr;">
+        <a href="https://simjimind.github.io/Yeonriji/encourage.html" class="encourage-card" target="_blank" rel="noopener">
+          <span class="ec-icon">
+            <img src="https://www.simjimind.co.kr/letter.webp" width="54" height="54" style="object-fit:contain;">
+          </span>
+          <span class="ec-title">격려의 언어로 표현해볼까요?</span>
+          <span class="ec-sub">부모 격려 플래시카드 열기 · 매일 조금씩, 나의 언어를 바꿔보세요</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- 7월 공개강좌 배너 -->
+    <div style="padding: 20px 32px 0; background: #fdf8f2;">
+      <a href="https://simjimind.github.io/adler_lecture_apply/202607/apply_july.html" style="display:block; text-decoration:none;" target="_blank" rel="noopener">
+        <img src="https://simjimind.github.io/adler_lecture_apply/202607/202607_banner.png"
+          alt="7월 공개강좌 신청하기"
+          style="width:100%; display:block; border-radius:4px; margin-bottom:20px;">
+      </a>
+    </div>
+
+    <!-- 7월 배너 아래 통계 문구 -->
+    <div style="background:#fdf8f2; padding:18px 32px 22px; text-align:center;">
+      <p style="font-size:13.5px; color:#5a4232; line-height:2.0; word-break:keep-all;">
+        2024년 조사 결과, 맞벌이 가구의 62%가 조부모님께 자녀 돌봄을 의탁하고 있습니다.<br>
+        빠르게 변화하는 세상 속에서 조부모님과 함께하는 자녀 이해는<br>폭넓고 새로운 비전과 대안을 마련할 것입니다.
+      </p>
+      <p style="font-size:11.5px; color:#b09580; line-height:1.8; margin-top:8px; word-break:keep-all;">
+        * 2024 서울시 양육자 실태조사 /
+        <a href="https://bravo.etoday.co.kr/view/atc_view/18419" style="color:#c07a48; text-decoration:none; border-bottom:1px solid rgba(192,122,72,0.4);" target="_blank" rel="noopener">데이터로 읽는 황혼육아의 현실 — 브라보마이라이프</a>
+      </p>
+    </div>
+
+    <!-- 함께 걷는 선생님들 -->
+    <div style="background:#fdfbf6; border-top:1px solid #ecd9c2; padding:28px 32px 8px;">
+      <div style="text-align:center; margin-bottom:18px;">
+        <div style="font-family:'Noto Sans KR',sans-serif; font-size:10.5px; font-weight:700; letter-spacing:0.2em; color:#b5693a; text-transform:uppercase; margin-bottom:6px;">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#b5693a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle; margin-right:5px;"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          TOGETHER · 함께 걷는 선생님들
+        </div>
+        <p style="font-size:13.5px; color:#6e5140; line-height:1.9; word-break:keep-all;">
+          이음이 가족들께 약속드렸던<br>
+          부모교육분과 선생님들의 프로필을 전해드립니다.
+        </p>
+      </div>
+      <img src="https://simjimind.github.io/adler_lecture_apply/202607/202607_teachers.png"
+        alt="한국아들러상담학회 부모교육분과 선생님들 — 수채화 프로필"
+        style="width:100%; display:block; border-radius:6px; border:1px solid #e8ddd0;">
+      <div style="height:24px;"></div>
+    </div>
+
+    <!-- 치유와 지혜의 장 (2개 통합 섹션) -->
+    <div style="background: linear-gradient(180deg, #f7e6d2 0%, #edd3b5 100%); padding: 28px 32px 32px; border-top: 1px solid #dfc09c;">
+
+      <!-- 섹션 헤더 -->
+      <div style="text-align:center; margin-bottom:22px;">
+        <div style="font-family:'Noto Sans KR',sans-serif; font-size:10.5px; font-weight:700; letter-spacing:0.2em; color:#b5693a; text-transform:uppercase; margin-bottom:6px;">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#b5693a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle; margin-right:5px;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          HEALING &amp; WISDOM
+        </div>
+        <div style="font-family:'Noto Serif KR',serif; font-size:19px; font-weight:700; color:#3d2a1c; line-height:1.4;">치유와 지혜의 장</div>
+        <div style="width:36px; height:2px; background:#d59a68; margin:10px auto 0;"></div>
+      </div>
+
+      <!-- ① 호그와트 2기 -->
+      <a href="https://cafe.naver.com/adlerparents/128" style="display:block; background:#ffffff; border:1px solid #ddbf9d; border-radius:6px; padding:18px 20px; margin-bottom:10px; text-decoration:none;" target="_blank" rel="noopener">
+        <div style="display:flex; align-items:center; gap:14px;">
+          <div style="flex-shrink:0; width:48px; height:48px; background:#ffffff; border:1px solid #eedbc4; border-radius:50%; display:flex; align-items:center; justify-content:center; overflow:hidden;">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#c07a48" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l1.9 5.8L20 9.7l-5 3.9 1.5 6.2L12 16.4l-4.5 3.4L9 13.6 4 9.7l6.1-1.9z"/></svg>
+          </div>
+          <div style="flex:1;">
+            <div style="font-size:10px; font-weight:700; letter-spacing:0.15em; color:#c07a48; text-transform:uppercase; margin-bottom:4px;">AI LAB · 호그와트 2기</div>
+            <div style="font-family:'Noto Serif KR',serif; font-size:14.5px; font-weight:700; color:#3d2a1c; line-height:1.45; word-break:keep-all;">AI와 아들러의 만남<br>호그와트 AI 실험실 2기</div>
+          </div>
+          <div style="flex-shrink:0; color:#d59a68; font-size:16px; font-weight:300;">→</div>
+        </div>
+      </a>
+
+      <!-- ② 전문가 프로필 -->
+      <a href="https://simjimind.github.io/adler_lecture_apply/202606/profile_form.html" style="display:block; background:#ffffff; border:1px solid #ddbf9d; border-radius:6px; padding:18px 20px; text-decoration:none;" target="_blank" rel="noopener">
+        <div style="display:flex; align-items:center; gap:14px;">
+          <div style="flex-shrink:0; width:48px; height:48px; background:#ffffff; border:1px solid #eedbc4; border-radius:50%; display:flex; align-items:center; justify-content:center; overflow:hidden;">
+            <img src="https://raw.githubusercontent.com/simjimind/nabi_apply_2026/refs/heads/main/Flower.png" width="38" height="38" style="object-fit:contain; display:block;">
+          </div>
+          <div style="flex:1;">
+            <div style="font-size:10px; font-weight:700; letter-spacing:0.15em; color:#6e4530; text-transform:uppercase; margin-bottom:4px;">EXPERT PROFILE · 전문가 선생님</div>
+            <div style="font-family:'Noto Serif KR',serif; font-size:14.5px; font-weight:700; color:#3d2a1c; line-height:1.45; word-break:keep-all;">전문가 선생님들의<br>프로필을 보내주세요</div>
+            <div style="margin-top:6px; font-size:12px; color:#96755e; line-height:1.7;">
+              이음이 가족들께 소개하는 장을 준비중입니다
+            </div>
+          </div>
+          <div style="flex-shrink:0; color:#d59a68; font-size:16px; font-weight:300;">→</div>
+        </div>
+      </a>
+
+    </div>
+
+
+    <!-- CTA 섹션 -->
+    <div class="cta-section">
+      <a href="https://page.stibee.com/subscriptions/484015" class="cta-btn cta-btn-recommend" target="_blank" rel="noopener">
+        이음이를 좋은 분들께 추천해주세요
+        <span class="cta-btn-sub">소중한 분들과 함께 성장하는 공간을 나눠요</span>
+      </a>
+      <a href="https://forms.gle/FM33pjMZLnhcoqFK8" class="cta-btn cta-btn-worry" target="_blank" rel="noopener">
+        요즘 고민이 있다면 함께 나눠요
+        <span class="cta-btn-sub">익명을 보장합니다</span>
+      </a>
+    </div>
+
+    <!-- 푸터 -->
+    <div class="footer">
+      <div class="footer-logo">한국아들러상담학회 부모교육분과</div>
+      <div class="footer-icons">
+        <a href="https://cafe.naver.com/adlerparents" class="footer-icon-link" title="네이버 카페" target="_blank" rel="noopener">N</a>
+        <a href="https://www.adler1870.or.kr/" class="footer-icon-link" title="홈" target="_blank" rel="noopener">⌂</a>
+      </div>
+      <div class="footer-info">
+        한국아들러상담학회 부모교육분과<br>
+        simjimind@gmail.com<br>
+        광주광역시 서구 영업로 26, 2층
+      </div>
+
+    </div>
+
+  </div><!-- /email-body -->
+</div><!-- /email-wrapper -->
+</body>
+</html>
